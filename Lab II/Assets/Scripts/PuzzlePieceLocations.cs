@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class PuzzlePieceLocations : MonoBehaviour
@@ -11,8 +13,10 @@ public class PuzzlePieceLocations : MonoBehaviour
     public Drag dragScript;
     public int row = 3;
     public int col = 1;
-    public GameObject[,] puzzlePiecesLocations; 
-    
+    public GameObject[,] puzzlePiecesLocations;
+    public int index;
+    public GameObject lastObjectHeld;
+    bool inRangeOfGoal;
     
 
     // Start is called before the first frame update
@@ -37,35 +41,41 @@ public class PuzzlePieceLocations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //check if object is close to puzzle location
         //set location to puzzle location
 
         //check if player is dragging an object
         if (dragScript.selectedObject != null)
         {
-            GameObject objectHeld = dragScript.selectedObject;
+            lastObjectHeld = dragScript.selectedObject;
             print("object grabbed");
-            print(objectHeld.name);
+            print(lastObjectHeld.name);
 
             //find object in array
             for (int j = 0; j < row; j++)
             {
                 if (puzzlePiecesLocations[0, j].name == dragScript.selectedObject.name)
                 {
-                    int index = j;
+                    index = j;
 
                     if (Vector3.Distance(puzzlePiecesLocations[0, index].transform.position, puzzlePiecesLocations[1, index].transform.position) < 0.5) 
                     {
-                        
+                        inRangeOfGoal = true;
                         print("CLOSE");
-                        objectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
+                        //lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
                     }
+                    else inRangeOfGoal = false;
                 }
             }
             
         }
 
+        //when item is dropped, make last object held unable to be picked up and set position
+        if(dragScript.selectedObject == null && inRangeOfGoal == true)
+        {
+            lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
+            lastObjectHeld.tag = "complete";
+        }
     }
 
 

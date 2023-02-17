@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Drag
   - solvedPos
+  - complete
   layers:
   - Default
   - TransparentFX

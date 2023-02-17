@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 69670652}
   - component: {fileID: 69670651}
   m_Layer: 0
-  m_Name: CorrectPositions
+  m_Name: CorrectPositions (0)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 583006083}
   - component: {fileID: 583006082}
   m_Layer: 0
-  m_Name: CorrectPositions
+  m_Name: CorrectPositions (1)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 698479594}
   - component: {fileID: 698479593}
   m_Layer: 0
-  m_Name: PuzzlePiece
+  m_Name: PuzzlePiece (0)
   m_TagString: Drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 1007489274}
   - component: {fileID: 1007489273}
   m_Layer: 0
-  m_Name: CorrectPositions
+  m_Name: CorrectPositions (2)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 1052338639}
   - component: {fileID: 1052338638}
   m_Layer: 0
-  m_Name: PuzzlePiece 1 (3)
+  m_Name: PuzzlePiece (3)
   m_TagString: Drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 1545803800}
   - component: {fileID: 1545803799}
   m_Layer: 0
-  m_Name: CorrectPositions
+  m_Name: CorrectPositions (3)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1058,7 +1058,7 @@ GameObject:
   - component: {fileID: 2078500282}
   - component: {fileID: 2078500281}
   m_Layer: 0
-  m_Name: PuzzlePiece 1 (2)
+  m_Name: PuzzlePiece (2)
   m_TagString: Drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
