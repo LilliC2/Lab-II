@@ -1,0 +1,82 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Drag : MonoBehaviour
+{
+    public GameObject selectedObject;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //left click
+        if(Input.GetMouseButtonDown(0))
+        {
+            //no object selected
+            if(selectedObject == null)
+            {
+                //assign object and pick something up
+                RaycastHit hit = CastRay();
+
+                //did we hit something
+                if(hit.collider != null)
+                {
+                    //check for drag tag, is dragable
+                    if (!hit.collider.CompareTag("Drag"))
+                        return; //exit
+                    selectedObject = hit.collider.gameObject;
+                    Cursor.visible = false; //remove cursor since gameobject is same pos as cursor
+                }
+            }
+            //object selected
+            else
+            {
+                //set object down
+                Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
+
+                //set gameobject pos to mouse pos, lower back down
+                selectedObject.transform.position = new Vector3(worldPosition.x, 0, worldPosition.z);
+
+                //reset object
+                selectedObject = null;
+                Cursor.visible = true;
+
+            }
+        }
+
+        //when object is picked up
+        if(selectedObject != null)
+        {
+            Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
+
+            //set gameobject pos to mouse pos
+            selectedObject.transform.position = new Vector3(worldPosition.x, .25f, worldPosition.z); 
+
+        }
+    }
+
+    /// <summary>
+    /// Raycast from mousep position
+    /// </summary>
+    /// <returns>Raycast hit</returns>
+    private RaycastHit CastRay()
+    {
+        Vector3 screenMousePosFar = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane);
+        Vector3 screenMousePosNear = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
+        Vector3 worldMousePosFar = Camera.main.ScreenToWorldPoint(screenMousePosFar);
+        Vector3 worldMousePosNear = Camera.main.ScreenToWorldPoint(screenMousePosNear);
+        RaycastHit hit;
+        Physics.Raycast(worldMousePosNear, worldMousePosFar - worldMousePosNear, out hit);
+
+        return hit;
+    }
+}
+
