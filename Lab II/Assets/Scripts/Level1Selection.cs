@@ -27,9 +27,15 @@ public class Level1Selection : MonoBehaviour
         {
             Debug.Log(gameObject.name + " is being clicked");
             cam.GetComponent<CameraMovement>().PlayAnimation("Painting1");
-            _sC.GetComponent<SceneController>().Level1();
+            StartCoroutine(ChangeLevel());
         }
     }
 
-    
+    IEnumerator ChangeLevel()
+    {
+        yield return new WaitForSeconds(1.5f);
+        _sC.GetComponent<SceneController>().Level1();
+    }
+
+
 }
