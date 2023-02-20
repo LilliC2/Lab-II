@@ -26,7 +26,7 @@ public class Level1Selection : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             Debug.Log(gameObject.name + " is being clicked");
-            cam.GetComponent<CameraMovement>().PlayAnimation("Painting1");
+            cam.GetComponent<CameraMovement>().PlayAnimation("Painting" + gameObject.name.ToString());
             StartCoroutine(ChangeLevel());
         }
     }
