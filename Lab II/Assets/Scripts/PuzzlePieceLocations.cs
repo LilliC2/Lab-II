@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class PuzzlePieceLocations : MonoBehaviour
 {
@@ -11,13 +13,16 @@ public class PuzzlePieceLocations : MonoBehaviour
     //classes mighjt be better however idk how to do that
 
     public Drag dragScript;
-    public int row = 3;
-    public int col = 1;
+    public int row = 11;
+    public int col = 2;
     public GameObject[,] puzzlePiecesLocations;
+
+
+
     public int index;
     public GameObject lastObjectHeld;
     bool inRangeOfGoal;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,17 +30,24 @@ public class PuzzlePieceLocations : MonoBehaviour
         //populate 2d array
         puzzlePiecesLocations = new GameObject[col, row];
 
-        for(int i = 0; i < col; i++)
+        for (int i = 0; i  < col; i++)
         {
-            for(int j = 0; j < row; j++)
+            print("Before j loop i + " + i);
+            for (int j = 0; j < row; j++)
             {
+                print(i);
                 //find drag pieces
-                if(i == 0) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("Drag")[j];
-                if(i== 1) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("solvedPos")[j];
-                
-                //print(puzzlePiecesLocations[i,j]);
+                if (i == 0) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("Drag")[j];
+                else if (i == 1) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("solvedPos")[j];
+
+                print(puzzlePiecesLocations[i, j] + "col " + i + " row " + j);
+
+
             }
         }
+
+
+        
     }
 
     // Update is called once per frame
@@ -78,8 +90,7 @@ public class PuzzlePieceLocations : MonoBehaviour
         }
     }
 
-
-
+  
 
     
 }
