@@ -316,6 +316,32 @@ MonoBehaviour:
   dragScript: {fileID: 268069196}
   row: 11
   col: 2
+  puzzlePieces:
+  - {fileID: 698479591}
+  - {fileID: 1968008244}
+  - {fileID: 2078500279}
+  - {fileID: 1052338636}
+  - {fileID: 1579296098}
+  - {fileID: 1658883234}
+  - {fileID: 578639116}
+  - {fileID: 2101034537}
+  - {fileID: 874416225}
+  - {fileID: 1798735359}
+  - {fileID: 1902275553}
+  - {fileID: 544302105}
+  puzzlePiecesEndPos:
+  - {fileID: 69670650}
+  - {fileID: 583006081}
+  - {fileID: 1007489272}
+  - {fileID: 1545803798}
+  - {fileID: 460199426}
+  - {fileID: 313181169}
+  - {fileID: 1329728388}
+  - {fileID: 1727351741}
+  - {fileID: 1280457961}
+  - {fileID: 1380940341}
+  - {fileID: 1290573103}
+  - {fileID: 351459144}
   index: 0
   lastObjectHeld: {fileID: 0}
 --- !u!1 &313181169
@@ -618,8 +644,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 535065432}
-  - component: {fileID: 535065434}
-  - component: {fileID: 535065433}
   m_Layer: 0
   m_Name: PuzzlePieces Layer3
   m_TagString: Untagged
@@ -646,36 +670,6 @@ Transform:
   m_Father: {fileID: 655302435}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &535065433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535065431}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ead9f288e7078429881fc899c23f79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragScript: {fileID: 535065434}
-  row: 4
-  col: 2
-  index: 0
-  lastObjectHeld: {fileID: 0}
---- !u!114 &535065434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535065431}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e17bec0904cf44cad4eb9e10188efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedObject: {fileID: 0}
 --- !u!1 &544302105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,7 +1997,7 @@ Transform:
   m_GameObject: {fileID: 1310259900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.58, y: 2, z: 9.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.60092, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 460199427}
@@ -2011,7 +2005,7 @@ Transform:
   - {fileID: 1329728389}
   - {fileID: 1727351742}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1329728388
 GameObject:
@@ -2232,7 +2226,7 @@ Transform:
   m_GameObject: {fileID: 1450778458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.19, y: 4, z: 3.83}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.60092, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1280457962}
@@ -2240,7 +2234,7 @@ Transform:
   - {fileID: 1290573104}
   - {fileID: 351459145}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460280945
 GameObject:
@@ -2267,7 +2261,7 @@ Transform:
   m_GameObject: {fileID: 1460280945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.2699995, y: 0, z: 8.17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.60092, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 69670654}
@@ -2965,8 +2959,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2051838714}
-  - component: {fileID: 2051838716}
-  - component: {fileID: 2051838715}
   m_Layer: 0
   m_Name: PuzzlePieces Layer2
   m_TagString: Untagged
@@ -2993,36 +2985,6 @@ Transform:
   m_Father: {fileID: 655302435}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2051838715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051838713}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ead9f288e7078429881fc899c23f79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragScript: {fileID: 2051838716}
-  row: 4
-  col: 2
-  index: 0
-  lastObjectHeld: {fileID: 0}
---- !u!114 &2051838716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051838713}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e17bec0904cf44cad4eb9e10188efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedObject: {fileID: 0}
 --- !u!1 &2078500279
 GameObject:
   m_ObjectHideFlags: 0

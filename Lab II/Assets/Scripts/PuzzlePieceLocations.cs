@@ -15,8 +15,12 @@ public class PuzzlePieceLocations : MonoBehaviour
     public Drag dragScript;
     public int row = 11;
     public int col = 2;
-    public GameObject[,] puzzlePiecesLocations;
+    //public GameObject[,] puzzlePiecesLocations;
 
+    public GameObject[] puzzlePieces;
+    public GameObject[] puzzlePiecesEndPos;
+
+    public GameObject[,] puzzlePiecesLocations;
 
 
     public int index;
@@ -27,27 +31,27 @@ public class PuzzlePieceLocations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+        
         //populate 2d array
         puzzlePiecesLocations = new GameObject[col, row];
 
-        for (int i = 0; i  < col; i++)
+        for (int i = 0; i < col; i++)
         {
             print("Before j loop i + " + i);
             for (int j = 0; j < row; j++)
             {
-                print(i);
+                //print(i);
                 //find drag pieces
                 if (i == 0) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("Drag")[j];
                 else if (i == 1) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("solvedPos")[j];
-
                 print(puzzlePiecesLocations[i, j] + "col " + i + " row " + j);
-
-
             }
         }
 
 
-        
+
     }
 
     // Update is called once per frame
@@ -66,11 +70,11 @@ public class PuzzlePieceLocations : MonoBehaviour
             //find object in array
             for (int j = 0; j < row; j++)
             {
-                if (puzzlePiecesLocations[0, j].name == dragScript.selectedObject.name)
+                if (puzzlePieces[j].name == dragScript.selectedObject.name)
                 {
                     index = j;
 
-                    if (Vector3.Distance(puzzlePiecesLocations[0, index].transform.position, puzzlePiecesLocations[1, index].transform.position) < 0.5) 
+                    if (Vector3.Distance(puzzlePieces[j].transform.position, puzzlePiecesEndPos[j].transform.position) < 0.5) 
                     {
                         inRangeOfGoal = true;
                         print("CLOSE");
@@ -85,7 +89,7 @@ public class PuzzlePieceLocations : MonoBehaviour
         //when item is dropped, make last object held unable to be picked up and set position
         if(dragScript.selectedObject == null && inRangeOfGoal == true)
         {
-            lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
+            lastObjectHeld.transform.position = puzzlePiecesEndPos[index].transform.position;
             lastObjectHeld.tag = "complete";
         }
     }
