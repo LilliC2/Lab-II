@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Level1Controller : MonoBehaviour
 {
+    //Gameobjects
+
+    public GameObject tray;
+    public GameObject layer1Pieces;
+    public GameObject layer2Pieces;
+    public GameObject layer3Pieces;
+
     // Start is called before the first frame update
     void Start()
     {

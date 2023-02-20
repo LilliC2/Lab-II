@@ -34,21 +34,21 @@ public class PuzzlePieceLocations : MonoBehaviour
 
 
         
-        //populate 2d array
-        puzzlePiecesLocations = new GameObject[col, row];
+        ////populate 2d array
+        //puzzlePiecesLocations = new GameObject[col, row];
 
-        for (int i = 0; i < col; i++)
-        {
-            print("Before j loop i + " + i);
-            for (int j = 0; j < row; j++)
-            {
-                //print(i);
-                //find drag pieces
-                if (i == 0) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("Drag")[j];
-                else if (i == 1) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("solvedPos")[j];
-                print(puzzlePiecesLocations[i, j] + "col " + i + " row " + j);
-            }
-        }
+        //for (int i = 0; i < col; i++)
+        //{
+        //    print("Before j loop i + " + i);
+        //    for (int j = 0; j < row; j++)
+        //    {
+        //        //print(i);
+        //        //find drag pieces
+        //        if (i == 0) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("Drag")[j];
+        //        else if (i == 1) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("solvedPos")[j];
+        //        print(puzzlePiecesLocations[i, j] + "col " + i + " row " + j);
+        //    }
+        //}
 
 
 
@@ -74,7 +74,7 @@ public class PuzzlePieceLocations : MonoBehaviour
                 {
                     index = j;
 
-                    if (Vector3.Distance(puzzlePieces[j].transform.position, puzzlePiecesEndPos[j].transform.position) < 0.5) 
+                    if (Vector3.Distance(puzzlePieces[j].transform.position, puzzlePiecesEndPos[j].transform.position) < 1) 
                     {
                         inRangeOfGoal = true;
                         print("CLOSE");

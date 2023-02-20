@@ -5,7 +5,8 @@ using UnityEngine;
 public class Drag : MonoBehaviour
 {
     public GameObject selectedObject;
-    
+    float objectHeight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class Drag : MonoBehaviour
                     if (!hit.collider.CompareTag("Drag"))
                         return; //exit
                     selectedObject = hit.collider.gameObject;
+                    objectHeight = selectedObject.transform.position.y;
                     Cursor.visible = false; //remove cursor since gameobject is same pos as cursor
                 }
             }
@@ -42,7 +44,9 @@ public class Drag : MonoBehaviour
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
 
                 //set gameobject pos to mouse pos, lower back down
-                selectedObject.transform.position = new Vector3(worldPosition.x, 0, worldPosition.z);
+                selectedObject.transform.position = new Vector3(worldPosition.x, objectHeight, worldPosition.z);
+
+                
 
                 //reset object
                 selectedObject = null;
@@ -58,7 +62,7 @@ public class Drag : MonoBehaviour
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
 
             //set gameobject pos to mouse pos
-            selectedObject.transform.position = new Vector3(worldPosition.x, .25f, worldPosition.z); 
+            selectedObject.transform.position = new Vector3(worldPosition.x,objectHeight * 1.25f, worldPosition.z); 
 
         }
     }
