@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drag : MonoBehaviour
+public class Drag : GameBehaviour
 {
     public GameObject selectedObject;
     float objectHeight;
