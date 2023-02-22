@@ -16,6 +16,8 @@ public class Drag : GameBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         //left click
         if(Input.GetMouseButtonDown(0))
         {
@@ -29,7 +31,7 @@ public class Drag : GameBehaviour
                 if(hit.collider != null)
                 {
                     //check for drag tag, is dragable
-                    if (!hit.collider.CompareTag("Drag"))
+                    if (!hit.collider.CompareTag("Drag") && hit.collider.gameObject.layer != CheckLayer()) 
                         return; //exit
                     selectedObject = hit.collider.gameObject;
                     objectHeight = selectedObject.transform.position.y;
@@ -65,6 +67,24 @@ public class Drag : GameBehaviour
             selectedObject.transform.position = new Vector3(worldPosition.x,objectHeight * 1.25f, worldPosition.z); 
 
         }
+    }
+
+    private int CheckLayer()
+    {
+        int layer = 0;
+        switch(_L1C.layerStatus)
+        {
+            case Level1Controller.LayerStatus.Layer1:
+                layer = 6;
+                break;
+            case Level1Controller.LayerStatus.Layer2:
+                layer = 7;
+                break;
+                    case Level1Controller.LayerStatus.Layer3:
+                layer = 8;
+                break;
+        }
+        return layer;
     }
 
     /// <summary>

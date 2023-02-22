@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-public class PuzzlePieceLocations : MonoBehaviour
+public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 {
 
     //classes mighjt be better however idk how to do that
@@ -94,7 +95,20 @@ public class PuzzlePieceLocations : MonoBehaviour
         }
     }
 
-  
+    public bool RandomisePieces()
+    {
+        bool scatter;
+        for (int i = 0; i < row; i++)
+        {
+            float posX = UnityEngine.Random.Range(62.1f, 43.63f);
+            float posZ = UnityEngine.Random.Range(-13.75f, 13.75f);
 
-    
+            puzzlePieces[i].gameObject.transform.DOMove(new Vector3(posX, puzzlePieces[i].gameObject.transform.position.y, posZ), 2);
+        }
+        scatter = true;
+        return scatter;
+    }
+
+
+
 }
