@@ -14,6 +14,10 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject layer2Pieces;
     public GameObject layer3Pieces;
 
+    public GameObject cameraPosInPuzzle;
+    public GameObject cameraPosCanvas;
+    public GameObject mainCamera;
+
     bool scatter = false;
     float layerSpeed = 2;
     public Ease layerEase;
@@ -44,8 +48,8 @@ public class Level1Controller : Singleton<Level1Controller>
 
 
         //move camera over to make room for tray
-
-
+        //ADD WAIT TIME 
+        mainCamera.transform.DOMove(cameraPosInPuzzle.transform.position, 1);
 
 
         //bring in layer 1 tray
@@ -95,10 +99,4 @@ public class Level1Controller : Singleton<Level1Controller>
     }
     
     
-    void ScatterPieces()
-    {
-        layer1Pieces.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(pieceScatterEase);
-        layer2Pieces.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(pieceScatterEase);
-        layer3Pieces.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(pieceScatterEase);
-    }
 }
