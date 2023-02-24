@@ -13,7 +13,6 @@ public class SceneController : MonoBehaviour
     public void LoadTitle()
     {
         SceneManager.LoadScene("Title");
-        
     }
 
     public void QuitGame()
@@ -24,5 +23,10 @@ public class SceneController : MonoBehaviour
     public void Level1()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void Assembly()
+    {
+        SceneManager.LoadScene("Assembly");
     }
 }

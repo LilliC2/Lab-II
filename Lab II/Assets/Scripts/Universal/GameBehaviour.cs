@@ -8,6 +8,7 @@ public class GameBehaviour : LC.Behaviour //inherits from
     protected static GameManager _GM { get { return GameManager.INSTANCE; } }
     protected static Level1Controller _L1C { get { return Level1Controller.INSTANCE; } }
     protected static PuzzlePieceLocations _PPL { get { return PuzzlePieceLocations.INSTANCE; } }
+    protected static UIManager _UI { get { return UIManager.INSTANCE; } }
     protected static CharacterAnimator _CA { get { return CharacterAnimator.INSTANCE; } }
 
 

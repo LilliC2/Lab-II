@@ -93,6 +93,7 @@ public class Level1Controller : Singleton<Level1Controller>
             mainCamera.transform.DOMove(cameraPosCanvas.transform.position, 3);
             //flatten puzzle
             ExecuteAfterSeconds(5, () => FlattenPieces());
+            _UI.ActivateWinPanel();
 
             //level complete
 
