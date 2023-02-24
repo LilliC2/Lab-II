@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro.EditorUtilities;
 using UnityEngine;
 
-public class Level1Selection : MonoBehaviour
+public class LevelSelectror : MonoBehaviour
 {
     
     public GameObject cam;
