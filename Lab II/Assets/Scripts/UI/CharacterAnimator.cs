@@ -8,6 +8,7 @@ public class CharacterAnimator : Singleton<CharacterAnimator>
     public enum Face { reset, sad, smile, happy}
     
     public Face face;
+    public Canvas canvas;
     
     void Start()
     {
@@ -63,6 +64,11 @@ public class CharacterAnimator : Singleton<CharacterAnimator>
                 anim.ResetTrigger("Smile");
                 break;
         }
+    }
+
+    public void EnablePanel()
+    {
+        canvas.enabled = true;
     }
 
     
