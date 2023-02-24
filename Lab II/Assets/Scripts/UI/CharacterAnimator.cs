@@ -40,15 +40,27 @@ public class CharacterAnimator : Singleton<CharacterAnimator>
         {
             case Face.reset:
                 PlayAnimation("Reset");
+                anim.ResetTrigger("Sad");
+                anim.ResetTrigger("Happy");
+                anim.ResetTrigger("Smile");
                 break;
             case Face.sad:
-                PlayAnimation("Reset");
+                PlayAnimation("Sad");
+                anim.ResetTrigger("Reset");
+                anim.ResetTrigger("Happy");
+                anim.ResetTrigger("Smile");
                 break;
             case Face.smile:
-                PlayAnimation("Reset");
+                PlayAnimation("Smile");
+                anim.ResetTrigger("Sad");
+                anim.ResetTrigger("Happy");
+                anim.ResetTrigger("Reset");
                 break;
             case Face.happy:
                 PlayAnimation("Happy");
+                anim.ResetTrigger("Sad");
+                anim.ResetTrigger("Reset");
+                anim.ResetTrigger("Smile");
                 break;
         }
     }
