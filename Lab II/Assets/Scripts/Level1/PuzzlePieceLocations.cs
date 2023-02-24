@@ -97,27 +97,31 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     {
                         inRangeOfGoal = true;
                         print("Happy");
+                        _CA.face = CharacterAnimator.Face.happy;
                         //lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
                     }
                     else inRangeOfGoal = false;
 
                     //SMILE EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 2 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 15)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 2.1f && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 15)
                     {
                         print("Smile");
+                        _CA.face = CharacterAnimator.Face.smile;
 
                     }
 
                     //NEUTRAL EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 15 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 30)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 15.1f && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 30)
                     {
                         print("Neutral");
+                        _CA.face = CharacterAnimator.Face.reset;
 
                     }
                     //SAD EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 30)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 30.1f)
                     {
                         print("Sad");
+                        _CA.face = CharacterAnimator.Face.sad;
 
                     }
                 }
