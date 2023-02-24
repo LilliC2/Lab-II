@@ -18,11 +18,18 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     public int col = 2;
     //public GameObject[,] puzzlePiecesLocations;
 
-    public GameObject[] puzzlePieces;
-    public GameObject[] puzzlePiecesEndPos;
+    public GameObject[] puzzlePiecesL1;
+    public GameObject[] puzzlePiecesL2;
+    public GameObject[] puzzlePiecesL3;
+    public GameObject[] puzzlePiecesEndPosL1;
+    public GameObject[] puzzlePiecesEndPosL2;
+    public GameObject[] puzzlePiecesEndPosL3;
+    bool[] completeionL1;
+    bool[] completeionL2;
+    bool[] completeionL3;
 
     public GameObject[,] puzzlePiecesLocations;
-
+    bool snapped = false;
 
     public int index;
     public GameObject lastObjectHeld;
@@ -34,29 +41,36 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     {
 
 
-        
-        ////populate 2d array
-        //puzzlePiecesLocations = new GameObject[col, row];
-
-        //for (int i = 0; i < col; i++)
-        //{
-        //    print("Before j loop i + " + i);
-        //    for (int j = 0; j < row; j++)
-        //    {
-        //        //print(i);
-        //        //find drag pieces
-        //        if (i == 0) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("Drag")[j];
-        //        else if (i == 1) puzzlePiecesLocations[i, j] = GameObject.FindGameObjectsWithTag("solvedPos")[j];
-        //        print(puzzlePiecesLocations[i, j] + "col " + i + " row " + j);
-        //    }
-        //}
-
-
-
     }
 
     // Update is called once per frame
     void Update()
+    {
+        
+        switch(_L1C.layerStatus)
+        {
+            case Level1Controller.LayerStatus.Layer1:
+                DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
+                break;
+            case Level1Controller.LayerStatus.Layer2:
+                print("In layer2");
+                DragAndDropPuzzlePieces(puzzlePiecesL2, puzzlePiecesEndPosL2);
+                break;
+            case Level1Controller.LayerStatus.Layer3:
+                DragAndDropPuzzlePieces(puzzlePiecesL3, puzzlePiecesEndPosL3);
+                break;
+
+        }
+    }
+
+    /// <summary>
+    /// Checks if selected puzzle piece is close to the target location, if so snaps it, changes tag and updates completetion array
+    /// </summary>
+    /// <param name="_puzzlePieces"></param>
+    /// <param name="_puzzlePiecesEndPos"></param>
+    /// <param name="_completetion"></param>
+    void DragAndDropPuzzlePieces(GameObject[] _puzzlePieces, GameObject[] _puzzlePiecesEndPos)
+
     {
         //check if object is close to puzzle location
         //set location to puzzle location
@@ -69,44 +83,99 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             print(lastObjectHeld.name);
 
             //find object in array
-            for (int j = 0; j < row; j++)
+            for (int j = 0; j < _puzzlePieces.Length; j++)
             {
-                if (puzzlePieces[j].name == dragScript.selectedObject.name)
+                if (_puzzlePieces[j].name == dragScript.selectedObject.name)
                 {
+                    snapped = false;
                     index = j;
 
-                    if (Vector3.Distance(puzzlePieces[j].transform.position, puzzlePiecesEndPos[j].transform.position) < 1) 
+                    print(j);
+
+                    //HAPPY EMOTE
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 2)
                     {
                         inRangeOfGoal = true;
-                        print("CLOSE");
+                        print("Happy");
                         //lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
                     }
                     else inRangeOfGoal = false;
+
+                    //SMILE EMOTE
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 2 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 15)
+                    {
+                        print("Smile");
+
+                    }
+
+                    //NEUTRAL EMOTE
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 15 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 30)
+                    {
+                        print("Neutral");
+
+                    }
+                    //SAD EMOTE
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 30)
+                    {
+                        print("Sad");
+
+                    }
                 }
             }
-            
+
         }
 
         //when item is dropped, make last object held unable to be picked up and set position
-        if(dragScript.selectedObject == null && inRangeOfGoal == true)
+        if (dragScript.selectedObject == null && inRangeOfGoal == true)
         {
-            lastObjectHeld.transform.position = puzzlePiecesEndPos[index].transform.position;
+            
+            if(!snapped)
+            {
+                lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
+                snapped = true;
+            }
+            
             lastObjectHeld.tag = "complete";
+            return;
         }
     }
 
+    /// <summary>
+    /// Moves puzzle pieces to a random location on the tray
+    /// </summary>
+    /// <returns></returns>
     public bool RandomisePieces()
     {
-        bool scatter;
-        for (int i = 0; i < row; i++)
+        float scatterTime = 3;
+        bool scatter = true;
+        for (int i = 0; i < 4; i++)
         {
-            float posX = UnityEngine.Random.Range(62.1f, 43.63f);
-            float posZ = UnityEngine.Random.Range(-13.75f, 13.75f);
-
-            puzzlePieces[i].gameObject.transform.DOMove(new Vector3(posX, puzzlePieces[i].gameObject.transform.position.y, posZ), 2);
+            puzzlePiecesL1[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
+            puzzlePiecesL2[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL2[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
+            puzzlePiecesL3[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL3[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
         }
-        scatter = true;
         return scatter;
+    }
+
+    /// <summary>
+    /// Checks if all pieces in current layer are in target locations
+    /// </summary>
+    /// <param name="_puzzlePieces"></param>
+    /// <returns>If layer is complete</returns>
+    public bool CheckLayerStatus(GameObject[] _puzzlePieces)
+    {
+        bool complete = true;
+        for(int i = 0; i < _puzzlePieces.Length; i++)
+        {
+            if(_puzzlePieces[i].tag != "complete")
+            {
+                complete = false;
+                break;
+            }
+        }
+
+        return complete;
+
     }
 
 

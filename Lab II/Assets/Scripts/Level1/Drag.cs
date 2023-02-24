@@ -31,7 +31,7 @@ public class Drag : GameBehaviour
                 if(hit.collider != null)
                 {
                     //check for drag tag, is dragable
-                    if (!hit.collider.CompareTag("Drag") && hit.collider.gameObject.layer != CheckLayer()) 
+                    if (!hit.collider.CompareTag("Drag")) 
                         return; //exit
                     selectedObject = hit.collider.gameObject;
                     objectHeight = selectedObject.transform.position.y;
@@ -69,23 +69,7 @@ public class Drag : GameBehaviour
         }
     }
 
-    private int CheckLayer()
-    {
-        int layer = 0;
-        switch(_L1C.layerStatus)
-        {
-            case Level1Controller.LayerStatus.Layer1:
-                layer = 6;
-                break;
-            case Level1Controller.LayerStatus.Layer2:
-                layer = 7;
-                break;
-                    case Level1Controller.LayerStatus.Layer3:
-                layer = 8;
-                break;
-        }
-        return layer;
-    }
+
 
     /// <summary>
     /// Raycast from mousep position
