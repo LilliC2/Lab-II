@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEditor.Build;
 
 public class Level1Controller : Singleton<Level1Controller>
 {
