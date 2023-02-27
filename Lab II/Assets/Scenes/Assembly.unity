@@ -1191,6 +1191,7 @@ MonoBehaviour:
   - {fileID: 1380940341}
   - {fileID: 1290573103}
   - {fileID: 351459144}
+  rotation: 0
   index: 0
   lastObjectHeld: {fileID: 0}
 --- !u!114 &526480634
@@ -3789,7 +3790,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545803798}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1900003, y: 0, z: -8.45}
   m_LocalScale: {x: 2.2816, y: 2.2816, z: 2.2816}
   m_ConstrainProportionsScale: 1

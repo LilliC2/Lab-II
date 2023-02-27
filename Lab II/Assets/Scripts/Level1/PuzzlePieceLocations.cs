@@ -30,6 +30,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     public GameObject[,] puzzlePiecesLocations;
     bool snapped = false;
 
+    public Ease rotation;
+
     public int index;
     public GameObject lastObjectHeld;
     bool inRangeOfGoal;
@@ -52,7 +54,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                 DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
                 break;
             case Level1Controller.LayerStatus.Layer2:
-                print("In layer2");
                 DragAndDropPuzzlePieces(puzzlePiecesL2, puzzlePiecesEndPosL2);
                 break;
             case Level1Controller.LayerStatus.Layer3:
@@ -92,6 +93,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     print(j);
 
                     
+
+# region aniamtion
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 2)
                     {
                         inRangeOfGoal = true;
@@ -130,9 +133,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                         _CA.face = CharacterAnimator.Face.sad;
 
                     }
+                    # endregion
                 }
             }
-
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                lastObjectHeld.transform.DORotate(new Vector3(0, lastObjectHeld.transform.rotation.y + 90f, 0), 1f).SetEase(rotation);
+            }
         }
 
         //when item is dropped, make last object held unable to be picked up and set position
