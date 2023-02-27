@@ -138,7 +138,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                lastObjectHeld.transform.DORotate(new Vector3(0, lastObjectHeld.transform.rotation.y + 90f, 0), 1f).SetEase(rotation);
+                lastObjectHeld.transform.DORotate(lastObjectHeld.transform.eulerAngles + new Vector3(0,90,0),1);
+                print("Rotating");
             }
         }
 
