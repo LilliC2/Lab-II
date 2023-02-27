@@ -103,13 +103,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
                     //HAPPY EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 5 )
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 3 )
                     {
                         print("Happy");
                         _CA.face = CharacterAnimator.Face.happy;
 
                     }//SMILE EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 5.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 10)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 3.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 10)
                     {
                         print("Smile");
                         _CA.face = CharacterAnimator.Face.smile;

@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &55666174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3870257365788287642, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+  m_PrefabInstance: {fileID: 805258049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &63524247
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +251,7 @@ GameObject:
   - component: {fileID: 69670653}
   - component: {fileID: 69670652}
   - component: {fileID: 69670651}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (0)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -325,6 +336,17 @@ Transform:
   m_Father: {fileID: 1460280946}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &101482452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3870257366238230367, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+  m_PrefabInstance: {fileID: 805258049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &139145535
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +425,7 @@ GameObject:
   - component: {fileID: 313181173}
   - component: {fileID: 313181172}
   - component: {fileID: 313181171}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (5)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -629,7 +651,7 @@ GameObject:
   - component: {fileID: 351459148}
   - component: {fileID: 351459147}
   - component: {fileID: 351459146}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (11)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -726,7 +748,7 @@ GameObject:
   - component: {fileID: 460199430}
   - component: {fileID: 460199429}
   - component: {fileID: 460199428}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (4)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -1285,6 +1307,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544302105}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &578331610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3870257366329445417, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+  m_PrefabInstance: {fileID: 805258049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &578639116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1427,7 @@ GameObject:
   - component: {fileID: 583006084}
   - component: {fileID: 583006083}
   - component: {fileID: 583006082}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (1)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -1721,7 +1754,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3870257365788287640, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3870257365945648104, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
       propertyPath: m_LocalScale.y
@@ -1737,6 +1770,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3870257366238230365, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870257366310320235, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: sad
+      value: 
+      objectReference: {fileID: 21300000, guid: bd1472627babefe44929be8f6035d1d2, type: 3}
+    - target: {fileID: 3870257366310320235, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: happy
+      value: 
+      objectReference: {fileID: 21300000, guid: 8cf4d20650fba824e81d52c3c342e7c5, type: 3}
+    - target: {fileID: 3870257366310320235, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: smile
+      value: 
+      objectReference: {fileID: 21300000, guid: 47dff92dafa0c38438c8222a47ef264d, type: 3}
+    - target: {fileID: 3870257366310320235, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: sadText
+      value: 
+      objectReference: {fileID: 55666174}
+    - target: {fileID: 3870257366310320235, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: happyText
+      value: 
+      objectReference: {fileID: 101482452}
+    - target: {fileID: 3870257366310320235, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: resetFace
+      value: 
+      objectReference: {fileID: 21300000, guid: f8664ffb9fedc6d419848bf5e3b55197, type: 3}
+    - target: {fileID: 3870257366310320235, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: smileText
+      value: 
+      objectReference: {fileID: 578331610}
+    - target: {fileID: 3870257366310320235, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: characterFace
+      value: 
+      objectReference: {fileID: 1644239444}
+    - target: {fileID: 3870257366310320238, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3870257366310320239, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
@@ -1754,6 +1823,10 @@ PrefabInstance:
     - target: {fileID: 3870257366310320239, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -260
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870257366329445423, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3870257366877495308, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
       propertyPath: m_Pivot.x
@@ -2349,7 +2422,7 @@ GameObject:
   - component: {fileID: 1007489275}
   - component: {fileID: 1007489274}
   - component: {fileID: 1007489273}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (2)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -2711,7 +2784,7 @@ GameObject:
   - component: {fileID: 1280457965}
   - component: {fileID: 1280457964}
   - component: {fileID: 1280457963}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (8)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -2839,7 +2912,7 @@ GameObject:
   - component: {fileID: 1290573107}
   - component: {fileID: 1290573106}
   - component: {fileID: 1290573105}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (10)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -3090,7 +3163,7 @@ GameObject:
   - component: {fileID: 1329728392}
   - component: {fileID: 1329728391}
   - component: {fileID: 1329728390}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (6)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -3187,7 +3260,7 @@ GameObject:
   - component: {fileID: 1380940345}
   - component: {fileID: 1380940344}
   - component: {fileID: 1380940343}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (9)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -3608,7 +3681,7 @@ GameObject:
   - component: {fileID: 1545803801}
   - component: {fileID: 1545803800}
   - component: {fileID: 1545803799}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (3)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
@@ -3790,6 +3863,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579296098}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1644239444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3870257366310320233, guid: 22c4d522051c20f46ad0839c790b4b84, type: 3}
+  m_PrefabInstance: {fileID: 805258049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1658883234
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,7 +4014,7 @@ GameObject:
   - component: {fileID: 1727351745}
   - component: {fileID: 1727351744}
   - component: {fileID: 1727351743}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CorrectPositions (7)
   m_TagString: solvedPos
   m_Icon: {fileID: 0}
