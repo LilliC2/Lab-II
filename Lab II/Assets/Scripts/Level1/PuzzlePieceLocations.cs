@@ -97,7 +97,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     
 
 # region aniamtion
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 2)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 5)
                     {
                         inRangeOfGoal = true;
                         print("CLOSE");
@@ -133,7 +133,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     //SAD EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 30.1)
                     {
-                     //   print("Sad");
+                     //    print("Sad");
                         _CA.face = CharacterAnimator.Face.sad;
 
                     }
@@ -150,12 +150,16 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //when item is dropped, make last object held unable to be picked up and set position
         if (dragScript.selectedObject == null && inRangeOfGoal == true)
         {
+            print("Goal rotation: " + _puzzlePiecesEndPos[index].transform.rotation.y);
+            print("Piece rotation: " + lastObjectHeld.transform.rotation.y);
+
             //Check if rotation is the same
-            if (lastObjectHeld.transform.rotation == _puzzlePiecesEndPos[index].transform.rotation)
+            if (lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.y < 0.5)
             {
                 print("Correct Rotation");
                 if (!snapped)
                 {
+                    print("snap!");
                     lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
 
                     lastObjectHeld.tag = "complete";
