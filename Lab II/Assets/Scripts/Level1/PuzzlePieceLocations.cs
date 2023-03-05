@@ -52,6 +52,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         {
             case Level1Controller.LayerStatus.Layer1:
                 DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
+                
                 break;
             case Level1Controller.LayerStatus.Layer2:
                 DragAndDropPuzzlePieces(puzzlePiecesL2, puzzlePiecesEndPosL2);
@@ -85,6 +86,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             //find object in array
             for (int j = 0; j < _puzzlePieces.Length; j++)
             {
+                print(puzzlePiecesEndPosL1);
                 if (_puzzlePieces[j].name == dragScript.selectedObject.name)
                 {
                     snapped = false;
@@ -98,6 +100,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 2)
                     {
                         inRangeOfGoal = true;
+                        print("CLOSE");
+
                         
                         //lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
                     }
@@ -108,13 +112,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     //HAPPY EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 3 )
                     {
-                        print("Happy");
+                        //print("Happy");
                         _CA.face = CharacterAnimator.Face.happy;
 
                     }//SMILE EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 3.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 10)
                     {
-                        print("Smile");
+                       // print("Smile");
                         _CA.face = CharacterAnimator.Face.smile;
 
                     }
@@ -122,14 +126,14 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     //NEUTRAL EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 10.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 30)
                     {
-                        print("Neutral");
+                       // print("Neutral");
                         _CA.face = CharacterAnimator.Face.reset;
 
                     }
                     //SAD EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 30.1)
                     {
-                        print("Sad");
+                     //   print("Sad");
                         _CA.face = CharacterAnimator.Face.sad;
 
                     }
@@ -146,14 +150,20 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //when item is dropped, make last object held unable to be picked up and set position
         if (dragScript.selectedObject == null && inRangeOfGoal == true)
         {
-            
-            if(!snapped)
+            //Check if rotation is the same
+            if (lastObjectHeld.transform.rotation == _puzzlePiecesEndPos[index].transform.rotation)
             {
-                lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
-                snapped = true;
+                print("Correct Rotation");
+                if (!snapped)
+                {
+                    lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
+
+                    lastObjectHeld.tag = "complete";
+                    snapped = true;
+                }
             }
             
-            lastObjectHeld.tag = "complete";
+            
             return;
         }
     }
@@ -164,14 +174,31 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     /// <returns></returns>
     public bool RandomisePieces()
     {
-        float scatterTime = 3;
+        int[] rotations = new int [4];
+        rotations[0] = 0;
+        rotations[1] = 90;
+        rotations[2] = 180;
+        rotations[3] = 270;
+        //rotations[4] = 360;
+        float scatterTime = 2;
         bool scatter = true;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < puzzlePiecesL1.Length; i++)
         {
             puzzlePiecesL1[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
-            puzzlePiecesL2[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL2[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
-            puzzlePiecesL3[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL3[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
+            puzzlePiecesL1[i].gameObject.transform.Rotate(0, rotations[UnityEngine.Random.Range(0, 3)], 0);
         }
+        for (int i = 0; i < puzzlePiecesL2.Length; i++)
+        { 
+            puzzlePiecesL2[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL2[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime); 
+            puzzlePiecesL2[i].gameObject.transform.Rotate(0, rotations[UnityEngine.Random.Range(0, 3)], 0);
+        }
+
+        for (int i = 0; i < puzzlePiecesL3.Length; i++)
+        {
+            puzzlePiecesL3[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL3[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
+            puzzlePiecesL3[i].gameObject.transform.Rotate(0, rotations[UnityEngine.Random.Range(0, 3)], 0);
+        }
+
         return scatter;
     }
 
