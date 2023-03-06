@@ -209,20 +209,20 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             puzzlePiecesL1[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
 
             int num = rotations[UnityEngine.Random.Range(0, 3)];
-            puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(num));
+            puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
         }
         for (int i = 0; i < puzzlePiecesL2.Length; i++)
         {
             int num = rotations[UnityEngine.Random.Range(0, 3)];
             puzzlePiecesL2[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL2[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime); 
-            puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(num));
+            puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(-0, Mathf.Round(num),0 );
         }
 
         for (int i = 0; i < puzzlePiecesL3.Length; i++)
         {
             int num = rotations[UnityEngine.Random.Range(0, 3)];
             puzzlePiecesL3[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL3[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
-            puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(num));
+            puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num),0);
         }
 
         return scatter;
