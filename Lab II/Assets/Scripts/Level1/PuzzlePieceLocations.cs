@@ -36,6 +36,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     public GameObject lastObjectHeld;
     bool inRangeOfGoal;
 
+    bool rotating = false;
 
     // Start is called before the first frame update
     void Start()
@@ -142,8 +143,19 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                lastObjectHeld.transform.DORotate(lastObjectHeld.transform.eulerAngles + new Vector3(0,90,0),1);
-                print("Rotating");
+                //if not 360
+                if(!rotating)
+                {
+                    rotating = true;
+                    Vector3 goalRotation = lastObjectHeld.transform.eulerAngles + new Vector3(0, 90, 0);
+                    lastObjectHeld.transform.DORotate(goalRotation, 1);
+
+                    print("Rotating to: " + (lastObjectHeld.transform.eulerAngles + new Vector3(0, 90, 0), 1));
+                    print("Rotating");
+                    ExecuteAfterSeconds(1, () => RotatingReset());
+
+                }
+                
             }
         }
 
@@ -154,13 +166,14 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             print("Piece rotation: " + lastObjectHeld.transform.rotation.y);
 
             //Check if rotation is the same
-            if (lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.y < 0.5)
+            if (lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.z < 0.5)
             {
                 print("Correct Rotation");
                 if (!snapped)
                 {
                     print("snap!");
                     lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
+                    lastObjectHeld.transform.rotation = _puzzlePiecesEndPos[index].transform.rotation;
 
                     lastObjectHeld.tag = "complete";
                     snapped = true;
@@ -170,6 +183,11 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             
             return;
         }
+    }
+
+    void RotatingReset()
+    {
+        rotating = false;
     }
 
     /// <summary>
@@ -183,24 +201,28 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         rotations[1] = 90;
         rotations[2] = 180;
         rotations[3] = 270;
-        //rotations[4] = 360;
+
         float scatterTime = 2;
         bool scatter = true;
         for (int i = 0; i < puzzlePiecesL1.Length; i++)
         {
             puzzlePiecesL1[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
-            puzzlePiecesL1[i].gameObject.transform.Rotate(0, rotations[UnityEngine.Random.Range(0, 3)], 0);
+
+            int num = rotations[UnityEngine.Random.Range(0, 3)];
+            puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(num));
         }
         for (int i = 0; i < puzzlePiecesL2.Length; i++)
-        { 
+        {
+            int num = rotations[UnityEngine.Random.Range(0, 3)];
             puzzlePiecesL2[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL2[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime); 
-            puzzlePiecesL2[i].gameObject.transform.Rotate(0, rotations[UnityEngine.Random.Range(0, 3)], 0);
+            puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(num));
         }
 
         for (int i = 0; i < puzzlePiecesL3.Length; i++)
         {
+            int num = rotations[UnityEngine.Random.Range(0, 3)];
             puzzlePiecesL3[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL3[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
-            puzzlePiecesL3[i].gameObject.transform.Rotate(0, rotations[UnityEngine.Random.Range(0, 3)], 0);
+            puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, 0, Mathf.Round(num));
         }
 
         return scatter;
