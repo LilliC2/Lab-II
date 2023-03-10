@@ -32,9 +32,15 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
     public Ease rotation;
 
+    bool l1compelete = false;
+    bool l2compelete = false;
+    bool l3compelete = false;
+
     public int index;
     public GameObject lastObjectHeld;
     bool inRangeOfGoal;
+
+    Vector3 pieceScale = new Vector3(5, 1.56f, 5);
 
     bool rotating = false;
 
@@ -83,6 +89,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             lastObjectHeld = dragScript.selectedObject;
             print("object grabbed");
             print(lastObjectHeld.name);
+
+            lastObjectHeld.transform.localScale = pieceScale;
 
             //find object in array
             for (int j = 0; j < _puzzlePieces.Length; j++)
@@ -159,6 +167,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             }
         }
 
+        //object in range of pallette
+        if (dragScript.selectedObject == null && (lastObjectHeld.transform.position.x > 13 || lastObjectHeld.transform.position.x < -22))
+        {
+            lastObjectHeld.gameObject.transform.localScale = new Vector3(2, 2, 2);
+        }
+
+
         //when item is dropped, make last object held unable to be picked up and set position
         if (dragScript.selectedObject == null && inRangeOfGoal == true)
         {
@@ -194,39 +209,52 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     /// Moves puzzle pieces to a random location on the tray
     /// </summary>
     /// <returns></returns>
-    public bool RandomisePieces()
-    {
+     public bool RandomisePieces()
+     {
         int[] rotations = new int [4];
         rotations[0] = 0;
         rotations[1] = 90;
         rotations[2] = 180;
         rotations[3] = 270;
 
-        float scatterTime = 2;
+
+        float scatterTime = 1;
         bool scatter = true;
-        for (int i = 0; i < puzzlePiecesL1.Length; i++)
-        {
-            puzzlePiecesL1[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(61.99f, 47.8f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
 
-            int num = rotations[UnityEngine.Random.Range(0, 3)];
-            puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
-        }
-        for (int i = 0; i < puzzlePiecesL2.Length; i++)
+        if(!l1compelete)
         {
-            int num = rotations[UnityEngine.Random.Range(0, 3)];
-            puzzlePiecesL2[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL2[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime); 
-            puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(-0, Mathf.Round(num),0 );
-        }
+            for (int i = 0; i < puzzlePiecesL1.Length; i++)
+            {
 
-        for (int i = 0; i < puzzlePiecesL3.Length; i++)
-        {
-            int num = rotations[UnityEngine.Random.Range(0, 3)];
-            puzzlePiecesL3[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL3[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
-            puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num),0);
+
+                puzzlePiecesL1[i].gameObject.transform.localScale = new Vector3(2, 2, 2);
+
+                puzzlePiecesL1[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(60.5f, 45.8f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-5.5f, 8.6f)));
+
+                int num = rotations[UnityEngine.Random.Range(0, 3)];
+                puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
+                if (i == puzzlePiecesL1.Length-1) l1compelete = true;
+            }
+
         }
 
-        return scatter;
-    }
+       
+        //for (int i = 0; i < puzzlePiecesL2.Length; i++)
+        //{
+        //    int num = rotations[UnityEngine.Random.Range(0, 3)];
+        //    puzzlePiecesL2[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL2[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime); 
+        //    puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(-0, Mathf.Round(num),0 );
+        //}
+
+        //for (int i = 0; i < puzzlePiecesL3.Length; i++)
+        //{
+        //    int num = rotations[UnityEngine.Random.Range(0, 3)];
+        //    puzzlePiecesL3[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL3[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
+        //    puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num),0);
+        //}
+
+         return scatter;
+     }
 
     /// <summary>
     /// Checks if all pieces in current layer are in target locations

@@ -34,12 +34,15 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject ActiveTrayPos;
     public GameObject DeactiveTrayPos;
 
+    bool moveOver;
+
     public enum LayerStatus { Layer1, Layer2, Layer3 }; 
     public LayerStatus layerStatus;
 
     // Start is called before the first frame update
     void Start()
     {
+        moveOver = false;
         layerStatus = LayerStatus.Layer1;
         
     }
@@ -50,8 +53,11 @@ public class Level1Controller : Singleton<Level1Controller>
         //show complete puzzle
 
         ExecuteAfterSeconds(2, () => RaisePieces());
+        if(!moveOver) ExecuteAfterSeconds(6, () => MovePieces());
+
+
         //scatter puzzle
-        if (!scatter) ExecuteAfterSeconds(6, () => scatter = _PPL.RandomisePieces());
+        if (!scatter) ExecuteAfterSeconds(9, () => scatter = _PPL.RandomisePieces());
 
 
 
@@ -115,6 +121,16 @@ public class Level1Controller : Singleton<Level1Controller>
         layer1Pieces.transform.DOMoveY(5f, 3);
         layer2Pieces.transform.DOMoveY(5f, 3);
         layer3Pieces.transform.DOMoveY(5f, 3);
+    }
+
+    void MovePieces()
+    {
+        moveOver = true;
+        print("move");
+        layer1Pieces.transform.DOMoveX(60f, 1);
+        layer2Pieces.transform.DOMoveX(60f, 1);
+        layer3Pieces.transform.DOMoveX(60f, 1);
+        
     }
 
     void BringTray(int _layer)
