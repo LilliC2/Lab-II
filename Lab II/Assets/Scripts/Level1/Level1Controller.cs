@@ -112,9 +112,9 @@ public class Level1Controller : Singleton<Level1Controller>
 
     void RaisePieces()
     {
-        layer1Pieces.transform.DOMoveY(1.42f, 3);
-        layer2Pieces.transform.DOMoveY(3.42f, 3);
-        layer3Pieces.transform.DOMoveY(4.42f, 3);
+        layer1Pieces.transform.DOMoveY(5f, 3);
+        layer2Pieces.transform.DOMoveY(5f, 3);
+        layer3Pieces.transform.DOMoveY(5f, 3);
     }
 
     void BringTray(int _layer)

@@ -206,7 +206,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         bool scatter = true;
         for (int i = 0; i < puzzlePiecesL1.Length; i++)
         {
-            puzzlePiecesL1[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(62.1f, 43.63f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
+            puzzlePiecesL1[i].gameObject.transform.DOMove(new Vector3(UnityEngine.Random.Range(61.99f, 47.8f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-13.75f, 13.75f)), scatterTime);
 
             int num = rotations[UnityEngine.Random.Range(0, 3)];
             puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
