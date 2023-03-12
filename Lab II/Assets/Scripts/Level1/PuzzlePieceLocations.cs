@@ -94,6 +94,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             print(lastObjectHeld.name);
 
 
+
+
             //find object in array
             for (int j = 0; j < _puzzlePieces.Length; j++)
             {
@@ -172,14 +174,18 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //object in range of pallette
         if (dragScript.selectedObject == null && (lastObjectHeld.transform.position.x > 13 || lastObjectHeld.transform.position.x < -22))
         {
-            
-            if((_L1C.layerStatus != Level1Controller.LayerStatus.Layer3))
+
+            if ((_L1C.layerStatus != Level1Controller.LayerStatus.Layer3))
             {
                 lastObjectHeld.gameObject.transform.localScale = new Vector3(2, 2, 2);
             }
-            
-        }
 
+        }
+        else
+        {
+            lastObjectHeld.gameObject.transform.localScale = pieceScale;
+
+        }
 
 
         //when item is dropped, make last object held unable to be picked up and set position
