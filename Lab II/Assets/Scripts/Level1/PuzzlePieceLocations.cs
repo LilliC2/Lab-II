@@ -41,8 +41,11 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     bool inRangeOfGoal;
 
     Vector3 pieceScale = new Vector3(5, 1.56f, 5);
+    Vector3 pieceScaleL3 = new Vector3(1.5f, 1, 1.5f);
 
     bool rotating = false;
+
+    float baseRange = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -90,7 +93,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             print("object grabbed");
             print(lastObjectHeld.name);
 
-            lastObjectHeld.transform.localScale = pieceScale;
 
             //find object in array
             for (int j = 0; j < _puzzlePieces.Length; j++)
@@ -106,7 +108,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     
 
 # region aniamtion
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 5)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < baseRange)
                     {
                         inRangeOfGoal = true;
                         print("CLOSE");
@@ -119,13 +121,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
                     //HAPPY EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 3 )
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange )
                     {
                         //print("Happy");
                         _CA.face = CharacterAnimator.Face.happy;
 
                     }//SMILE EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 3.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 10)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 0.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < baseRange + 10)
                     {
                        // print("Smile");
                         _CA.face = CharacterAnimator.Face.smile;
@@ -133,14 +135,14 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     }
 
                     //NEUTRAL EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 10.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < 30)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 10.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < baseRange + 30)
                     {
                        // print("Neutral");
                         _CA.face = CharacterAnimator.Face.reset;
 
                     }
                     //SAD EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > 30.1)
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 30.1)
                     {
                      //    print("Sad");
                         _CA.face = CharacterAnimator.Face.sad;
@@ -170,8 +172,14 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //object in range of pallette
         if (dragScript.selectedObject == null && (lastObjectHeld.transform.position.x > 13 || lastObjectHeld.transform.position.x < -22))
         {
-            lastObjectHeld.gameObject.transform.localScale = new Vector3(2, 2, 2);
+            
+            if((_L1C.layerStatus != Level1Controller.LayerStatus.Layer3))
+            {
+                lastObjectHeld.gameObject.transform.localScale = new Vector3(2, 2, 2);
+            }
+            
         }
+
 
 
         //when item is dropped, make last object held unable to be picked up and set position
@@ -217,8 +225,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         rotations[2] = 180;
         rotations[3] = 270;
 
-
-        float scatterTime = 1;
         bool scatter = true;
 
         if(!l1compelete)
@@ -229,7 +235,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
                 puzzlePiecesL1[i].gameObject.transform.localScale = new Vector3(2, 2, 2);
 
-                puzzlePiecesL1[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(60.5f, 45.8f), puzzlePiecesL1[i].gameObject.transform.position.y, UnityEngine.Random.Range(-5.5f, 8.6f)));
+                puzzlePiecesL1[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(69.9f, 52.9f), 5, UnityEngine.Random.Range(-5.5f, 7.9f)));
 
                 int num = rotations[UnityEngine.Random.Range(0, 3)];
                 puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
@@ -246,11 +252,26 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
                 puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(2, 2, 2);
 
-                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(60.5f, 45.8f), puzzlePiecesL2[i].gameObject.transform.position.y, UnityEngine.Random.Range(-5.5f, 8.6f)));
+                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(69.9f, 52.9f),5, UnityEngine.Random.Range(-5.5f, 7.9f)));
 
                 int num = rotations[UnityEngine.Random.Range(0, 3)];
                 puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
                 if (i == puzzlePiecesL2.Length - 1) l2compelete = true;
+            }
+
+        }if (!l3compelete)
+        {
+            for (int i = 0; i < puzzlePiecesL3.Length; i++)
+            {
+
+
+                puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(2, 2, 2);
+
+                puzzlePiecesL3[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(69.9f, 52.9f), 5, UnityEngine.Random.Range(-5.5f, 7.9f)));
+
+                int num = rotations[UnityEngine.Random.Range(0, 3)];
+                puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
+                if (i == puzzlePiecesL3.Length - 1) l3compelete = true;
             }
 
         }

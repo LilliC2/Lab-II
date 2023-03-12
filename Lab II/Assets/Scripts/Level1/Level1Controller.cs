@@ -57,17 +57,18 @@ public class Level1Controller : Singleton<Level1Controller>
 
 
         //scatter puzzle
-        if (!scatter) ExecuteAfterSeconds(9, () => scatter = _PPL.RandomisePieces());
+        if (!scatter) ExecuteAfterSeconds(6, () => scatter = _PPL.RandomisePieces());
 
 
 
         //move camera over to make room for tray
         //ADD WAIT TIME 
-        mainCamera.transform.DOMove(cameraPosInPuzzle.transform.position, 1);
+        if(layerStatus == LayerStatus.Layer1) ExecuteAfterSeconds(8, () => MoveCamera(cameraPosInPuzzle));
+
 
 
         //bring in layer 1 tray
-        ExecuteAfterSeconds(10, () => BringTray(2));
+        ExecuteAfterSeconds(10, () => BringTray(1));
 
         //check if layer 1 is complete
         if(_PPL.CheckLayerStatus(_PPL.puzzlePiecesL1) && layerStatus == LayerStatus.Layer1)
@@ -95,7 +96,7 @@ public class Level1Controller : Singleton<Level1Controller>
         {
             print("donje");
             //move camera to focus on canvas and remove tray
-            mainCamera.transform.DOMove(cameraPosCanvas.transform.position, 3);
+            ExecuteAfterSeconds(1, () => MoveCamera(cameraPosCanvas));
             //flatten puzzle
             ExecuteAfterSeconds(5, () => FlattenPieces());
             _UI.ActivateWinPanel();
@@ -152,5 +153,10 @@ public class Level1Controller : Singleton<Level1Controller>
         }
     }
     
+    void MoveCamera(GameObject _pos)
+    {
+
+        mainCamera.transform.DOMove(_pos.transform.position, 1);
+    }
     
 }
