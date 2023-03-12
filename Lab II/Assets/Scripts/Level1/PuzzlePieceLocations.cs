@@ -178,6 +178,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             if ((_L1C.layerStatus != Level1Controller.LayerStatus.Layer3))
             {
                 lastObjectHeld.gameObject.transform.localScale = new Vector3(2, 2, 2);
+                // Vector3 lOHscale =lastObjectHeld.gameObject.transform.localScale;
+                //lastObjectHeld.gameObject.transform.localScale = new Vector3(lOHscale.x-2, lOHscale.y-2f, lOHscale.z-2);
             }
 
         }

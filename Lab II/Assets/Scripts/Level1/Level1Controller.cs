@@ -44,7 +44,7 @@ public class Level1Controller : Singleton<Level1Controller>
     {
         moveOver = false;
         layerStatus = LayerStatus.Layer1;
-        
+        ExecuteAfterSeconds(6, () => MovePieces());
     }
 
     // Update is called once per frame
@@ -53,11 +53,11 @@ public class Level1Controller : Singleton<Level1Controller>
         //show complete puzzle
 
         ExecuteAfterSeconds(2, () => RaisePieces());
-        if(moveOver == false) ExecuteAfterSeconds(6, () => MovePieces());
+        //if (moveOver == false) 
 
 
         //scatter puzzle
-        if (!scatter) ExecuteAfterSeconds(6, () => scatter = _PPL.RandomisePieces());
+        if (!scatter) ExecuteAfterSeconds(10, () => scatter = _PPL.RandomisePieces());
 
 
 
@@ -128,7 +128,7 @@ public class Level1Controller : Singleton<Level1Controller>
     void MovePieces()
     {
         //currently not working so return to skip this
-        return;
+        //return;
         moveOver = true;
         print("move");
         layer1Pieces.transform.DOMoveX(60f, 1f);
