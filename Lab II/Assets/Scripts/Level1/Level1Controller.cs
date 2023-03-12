@@ -67,7 +67,7 @@ public class Level1Controller : Singleton<Level1Controller>
 
 
         //bring in layer 1 tray
-        ExecuteAfterSeconds(15, () => BringTray(1));
+        ExecuteAfterSeconds(10, () => BringTray(2));
 
         //check if layer 1 is complete
         if(_PPL.CheckLayerStatus(_PPL.puzzlePiecesL1) && layerStatus == LayerStatus.Layer1)
@@ -130,6 +130,7 @@ public class Level1Controller : Singleton<Level1Controller>
         layer1Pieces.transform.DOMoveX(60f, 1);
         layer2Pieces.transform.DOMoveX(60f, 1);
         layer3Pieces.transform.DOMoveX(60f, 1);
+        return;
         
     }
 
