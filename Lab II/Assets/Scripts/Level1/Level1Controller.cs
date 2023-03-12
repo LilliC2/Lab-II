@@ -84,6 +84,7 @@ public class Level1Controller : Singleton<Level1Controller>
         //check if layer 2 is compelte
         if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL2) && layerStatus == LayerStatus.Layer2)
         {
+            print("level 2 done");
             //remove layer 2 tray
             layer2Tray.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(layerEase);
             //bring in layer 3 tray

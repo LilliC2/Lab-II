@@ -183,7 +183,11 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         }
         else
         {
-            lastObjectHeld.gameObject.transform.localScale = pieceScale;
+            if ((_L1C.layerStatus != Level1Controller.LayerStatus.Layer3))
+            {
+                lastObjectHeld.gameObject.transform.localScale = pieceScale;
+            }
+            
 
         }
 
