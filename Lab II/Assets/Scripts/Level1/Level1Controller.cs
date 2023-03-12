@@ -53,7 +53,7 @@ public class Level1Controller : Singleton<Level1Controller>
         //show complete puzzle
 
         ExecuteAfterSeconds(2, () => RaisePieces());
-        if(!moveOver) ExecuteAfterSeconds(6, () => MovePieces());
+        if(moveOver == false) ExecuteAfterSeconds(6, () => MovePieces());
 
 
         //scatter puzzle
@@ -125,12 +125,14 @@ public class Level1Controller : Singleton<Level1Controller>
 
     void MovePieces()
     {
+        //currently not working so return to skip this
+        return;
         moveOver = true;
         print("move");
-        layer1Pieces.transform.DOMoveX(60f, 1);
-        layer2Pieces.transform.DOMoveX(60f, 1);
-        layer3Pieces.transform.DOMoveX(60f, 1);
-        return;
+        layer1Pieces.transform.DOMoveX(60f, 1f);
+        layer2Pieces.transform.DOMoveX(60f, 1f);
+        layer3Pieces.transform.DOMoveX(60f, 1f);
+        
         
     }
 
