@@ -40,7 +40,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     public GameObject lastObjectHeld = null;
     bool inRangeOfGoal;
 
-    Vector3 pieceScale = new Vector3(5, 1.56f, 5);
+    Vector3 pieceScale = new Vector3(1, 1, 1);
     Vector3 pieceScaleL3 = new Vector3(1.5f, 1, 1.5f);
 
     bool rotating = false;
@@ -185,7 +185,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         {
             if ((_L1C.layerStatus != Level1Controller.LayerStatus.Layer3))
             {
-                lastObjectHeld.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);;
+                lastObjectHeld.gameObject.transform.localScale = pieceScale;
             }
 
 
@@ -243,7 +243,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
 
 
-                puzzlePiecesL1[i].gameObject.transform.localScale = new Vector3(2, 2, 2);
+                puzzlePiecesL1[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
                 puzzlePiecesL1[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(69.9f, 52.9f), 5, UnityEngine.Random.Range(-5.5f, 7.9f)));
 
