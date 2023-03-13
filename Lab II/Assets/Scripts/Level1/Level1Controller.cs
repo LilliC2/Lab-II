@@ -17,6 +17,9 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject layer2Tray;
     public GameObject layer3Tray;
 
+    public GameObject layer1Protection;
+    public GameObject layer2Protection;
+
     //just pieces
     public GameObject layer1Pieces;
     public GameObject layer2Pieces;
@@ -73,6 +76,8 @@ public class Level1Controller : Singleton<Level1Controller>
         //check if layer 1 is complete
         if(_PPL.CheckLayerStatus(_PPL.puzzlePiecesL1) && layerStatus == LayerStatus.Layer1)
         {
+            layer1Protection.SetActive(true);
+
             //remove layer 1 tray
             layer1Tray.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(layerEase);
             //bring in layer 2 tray
@@ -84,6 +89,7 @@ public class Level1Controller : Singleton<Level1Controller>
         //check if layer 2 is compelte
         if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL2) && layerStatus == LayerStatus.Layer2)
         {
+            layer2Protection.SetActive(true);
             print("level 2 done");
             //remove layer 2 tray
             layer2Tray.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(layerEase);
