@@ -6,6 +6,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static ProtagonistAnimator;
 
 public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 {
@@ -124,28 +125,32 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange )
                     {
                         //print("Happy");
-                        _CA.face = CharacterAnimator.Face.happy;
+                        //_CA.face = CharacterAnimator.Face.happy;
+                        _PA.characterEmotion = CharacterEmotion.Correct;
 
                     }//SMILE EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 0.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < baseRange + 10)
                     {
-                       // print("Smile");
-                        _CA.face = CharacterAnimator.Face.smile;
+                        // print("Smile");
+                        //_CA.face = CharacterAnimator.Face.smile;
+                        _PA.characterEmotion = CharacterEmotion.Close;
 
                     }
 
                     //NEUTRAL EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 10.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < baseRange + 30)
                     {
-                       // print("Neutral");
-                        _CA.face = CharacterAnimator.Face.reset;
+                        // print("Neutral");
+                        //_CA.face = CharacterAnimator.Face.reset;
+                        _PA.characterEmotion = CharacterEmotion.Medium;
 
                     }
                     //SAD EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 30.1)
                     {
-                     //    print("Sad");
-                        _CA.face = CharacterAnimator.Face.sad;
+                        //    print("Sad");
+                        //_CA.face = CharacterAnimator.Face.sad;
+                        _PA.characterEmotion = CharacterEmotion.Far;
 
                     }
                     # endregion

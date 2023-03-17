@@ -25177,6 +25177,7 @@ GameObject:
   - component: {fileID: 1714547975}
   - component: {fileID: 1714547974}
   - component: {fileID: 1714547976}
+  - component: {fileID: 1714547977}
   m_Layer: 5
   m_Name: CharacterPanel
   m_TagString: Untagged
@@ -25264,6 +25265,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1714547977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714547972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6aafa87c5f571447a803741e8b60e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroy: 0
+  characterEmotion: 0
+  canvas: {fileID: 1736193885}
+  characterFace: {fileID: 517518143}
 --- !u!1 &1722381283
 GameObject:
   m_ObjectHideFlags: 0
