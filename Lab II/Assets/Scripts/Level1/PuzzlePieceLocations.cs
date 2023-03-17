@@ -128,6 +128,16 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                         //_CA.face = CharacterAnimator.Face.happy;
                         _PA.characterEmotion = CharacterEmotion.Correct;
 
+                        //Left rotation
+                        //_PA.characterEmotion = CharacterEmotion.Left;
+
+                        //Right rotation
+                        //_PA.characterEmotion = CharacterEmotion.Right;
+
+                        //Multiple rotation
+                        //_PA.characterEmotion = CharacterEmotion.Spin;
+
+
                     }//SMILE EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 0.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < baseRange + 10)
                     {
