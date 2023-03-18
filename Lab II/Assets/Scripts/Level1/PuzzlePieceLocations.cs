@@ -91,24 +91,19 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         if (dragScript.selectedObject != null)
         {
             lastObjectHeld = dragScript.selectedObject;
-            print("object grabbed");
-            print(lastObjectHeld.name);
 
 
             //find object in array
             for (int j = 0; j < _puzzlePieces.Length; j++)
             {
-                print(puzzlePiecesEndPosL1);
                 if (_puzzlePieces[j].name == dragScript.selectedObject.name)
                 {
                     snapped = false;
                     index = j;
 
-                    print(j);
+                    print(_puzzlePieces[j].transform.eulerAngles.y);
 
-                    
-
-# region aniamtion
+#region aniamtion
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < baseRange)
                     {
                         inRangeOfGoal = true;
@@ -122,23 +117,34 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
                     //HAPPY EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange )
+                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange && _puzzlePieces[j].transform.eulerAngles.y == 0)
                     {
                         //print("Happy");
                         //_CA.face = CharacterAnimator.Face.happy;
                         _PA.characterEmotion = CharacterEmotion.Correct;
 
-                        //Left rotation
-                        //_PA.characterEmotion = CharacterEmotion.Left;
-
-                        //Right rotation
-                        //_PA.characterEmotion = CharacterEmotion.Right;
-
+                    }
+                    
+                    if (_puzzlePieces[j].transform.eulerAngles.y == 270 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange)
+                    {
+                        print("go right");
+                        //Right rotation 270
+                        _PA.characterEmotion = CharacterEmotion.Right;
+                    }
+                    if (_puzzlePieces[j].transform.eulerAngles.y == 180 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange)
+                    {
+                        print("go multiple");
                         //Multiple rotation
-                        //_PA.characterEmotion = CharacterEmotion.Spin;
+                        _PA.characterEmotion = CharacterEmotion.Spin;
+                    }
+                    if (_puzzlePieces[j].transform.eulerAngles.y == 90 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange)
+                    {
+                        print("Emotion Left");
+                        //Left rotation 180
+                        _PA.characterEmotion = CharacterEmotion.Left;
 
-
-                    }//SMILE EMOTE
+                    }
+                    //SMILE EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 0.1 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < baseRange + 10)
                     {
                         // print("Smile");
@@ -175,8 +181,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     Vector3 goalRotation = lastObjectHeld.transform.eulerAngles + new Vector3(0, 90, 0);
                     lastObjectHeld.transform.DORotate(goalRotation, 1);
 
-                    print("Rotating to: " + (lastObjectHeld.transform.eulerAngles + new Vector3(0, 90, 0), 1));
-                    print("Rotating");
                     ExecuteAfterSeconds(1, () => RotatingReset());
 
                 }
@@ -210,16 +214,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //when item is dropped, make last object held unable to be picked up and set position
         if (dragScript.selectedObject == null && inRangeOfGoal == true)
         {
-            print("Goal rotation: " + _puzzlePiecesEndPos[index].transform.rotation.y);
-            print("Piece rotation: " + lastObjectHeld.transform.rotation.y);
+           
 
             //Check if rotation is the same
             if (lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.z < 0.5)
             {
-                print("Correct Rotation");
                 if (!snapped)
                 {
-                    print("snap!");
                     lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
                     lastObjectHeld.transform.rotation = _puzzlePiecesEndPos[index].transform.rotation;
 
