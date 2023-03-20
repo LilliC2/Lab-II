@@ -9,6 +9,8 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
     Animator anim;
     public enum CharacterEmotion { Enter, Idle, Far, Medium, Close, Correct, Wrong, Right, Left, Spin, Reset }
 
+    public TMP_Text message;
+
     public CharacterEmotion characterEmotion;
     public Canvas canvas;
 
@@ -23,16 +25,23 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
             characterEmotion = CharacterEmotion.Far;
+            ProtagonistAnim();
+        }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
             characterEmotion = CharacterEmotion.Medium;
+            ProtagonistAnim();
+        }
+          
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            characterEmotion = CharacterEmotion.Close;
+            characterEmotion = CharacterEmotion.Close; 
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            characterEmotion = CharacterEmotion.Correct;
+            characterEmotion = CharacterEmotion.Correct; 
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
             characterEmotion = CharacterEmotion.Wrong;
@@ -52,7 +61,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
         if (Input.GetKeyDown(KeyCode.Alpha0))
             characterEmotion = CharacterEmotion.Reset;
 
-        ProtagonistAnim();
+
 
         //ChangeFace();
 
@@ -155,7 +164,8 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Right");
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
-                anim.ResetTrigger("Reset"); break;
+                anim.ResetTrigger("Reset");
+                break;
 
             case CharacterEmotion.Right:
                 anim.ResetTrigger("Idle");
@@ -167,7 +177,8 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.SetTrigger("Right");
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
-                anim.ResetTrigger("Reset"); break;
+                anim.ResetTrigger("Reset");
+                break;
 
             case CharacterEmotion.Left:
                 anim.ResetTrigger("Idle");
@@ -179,7 +190,8 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Right");
                 anim.SetTrigger("Left");
                 anim.ResetTrigger("Spin");
-                anim.ResetTrigger("Reset"); break;
+                anim.ResetTrigger("Reset");
+                break;
 
             case CharacterEmotion.Spin:
                 anim.ResetTrigger("Idle");
@@ -191,7 +203,8 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Right");
                 anim.ResetTrigger("Left");
                 anim.SetTrigger("Spin");
-                anim.ResetTrigger("Reset"); break;
+                anim.ResetTrigger("Reset");
+                break;
 
             case CharacterEmotion.Reset:
                 anim.ResetTrigger("Idle");

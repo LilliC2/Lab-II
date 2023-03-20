@@ -122,7 +122,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                         //print("Happy");
                         //_CA.face = CharacterAnimator.Face.happy;
                         _PA.characterEmotion = CharacterEmotion.Correct;
-
+                        _PA.ProtagonistAnim();
                     }
                     
                     if (_puzzlePieces[j].transform.eulerAngles.y == 270 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange)
@@ -130,18 +130,21 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                         print("go right");
                         //Right rotation 270
                         _PA.characterEmotion = CharacterEmotion.Right;
+                        _PA.ProtagonistAnim();
                     }
                     if (_puzzlePieces[j].transform.eulerAngles.y == 180 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange)
                     {
                         print("go multiple");
                         //Multiple rotation
                         _PA.characterEmotion = CharacterEmotion.Spin;
+                        _PA.ProtagonistAnim();
                     }
                     if (_puzzlePieces[j].transform.eulerAngles.y == 90 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange)
                     {
                         print("Emotion Left");
                         //Left rotation 180
                         _PA.characterEmotion = CharacterEmotion.Left;
+                        _PA.ProtagonistAnim();
 
                     }
                     //SMILE EMOTE
@@ -150,7 +153,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                         // print("Smile");
                         //_CA.face = CharacterAnimator.Face.smile;
                         _PA.characterEmotion = CharacterEmotion.Close;
-
+                        _PA.ProtagonistAnim();
                     }
 
                     //NEUTRAL EMOTE
@@ -159,7 +162,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                         // print("Neutral");
                         //_CA.face = CharacterAnimator.Face.reset;
                         _PA.characterEmotion = CharacterEmotion.Medium;
-
+                        _PA.ProtagonistAnim();
                     }
                     //SAD EMOTE
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange + 30.1)
@@ -167,7 +170,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                         //    print("Sad");
                         //_CA.face = CharacterAnimator.Face.sad;
                         _PA.characterEmotion = CharacterEmotion.Far;
-
+                        _PA.ProtagonistAnim();
                     }
                     # endregion
                 }
