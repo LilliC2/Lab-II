@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class Level1Controller : Singleton<Level1Controller>
 {
@@ -38,6 +39,11 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject DeactiveTrayPos;
 
     bool moveOver;
+
+    public GameObject hintCanvas;
+    float hintsUsed;
+    public GameObject finishedImage;
+    public TMP_Text hintsRemaining;
 
     public enum LayerStatus { Layer1, Layer2, Layer3 }; 
     public LayerStatus layerStatus;
@@ -145,9 +151,13 @@ public class Level1Controller : Singleton<Level1Controller>
 
     void BringTray(int _layer)
     {
+        
+
         switch(_layer)
         {
             case 1:
+                //turn on hint button
+                hintCanvas.SetActive(true);
                 layer1TrayPieces.transform.DOMove(ActiveTrayPos.transform.position, layerSpeed).SetEase(layerEase);
                 break;
             case 2:
@@ -165,4 +175,24 @@ public class Level1Controller : Singleton<Level1Controller>
         mainCamera.transform.DOMove(_pos.transform.position, 1);
     }
     
+    public void HintsButton()
+    {
+        StartCoroutine(Hints());
+    }
+
+    IEnumerator Hints()
+    {
+        if(hintsUsed <3)
+        {
+            hintsUsed++;
+
+            finishedImage.SetActive(true);
+
+            yield return new WaitForSeconds(3);
+
+            finishedImage.SetActive(false);
+        }
+        
+    }
+
 }
