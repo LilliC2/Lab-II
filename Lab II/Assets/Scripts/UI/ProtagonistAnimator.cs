@@ -14,6 +14,8 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
 
     public Image characterFace;
 
+    public TMP_Text textBox;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -78,6 +80,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
+                textBox.text = "";
                 break;
 
             case CharacterEmotion.Idle:
@@ -91,6 +94,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
+                textBox.text = "...";
                 break;
 
             case CharacterEmotion.Far:
@@ -104,6 +108,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
+                textBox.text = "Too far...";
                 break;
 
             case CharacterEmotion.Medium:
@@ -117,6 +122,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
+                textBox.text = "Almost";
                 break;
 
             case CharacterEmotion.Close:
@@ -130,6 +136,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
+                textBox.text = "You're close!";
                 break;
 
             case CharacterEmotion.Correct:
@@ -143,6 +150,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
+                textBox.text = "Thats it, good job!";
                 break;
 
             case CharacterEmotion.Wrong:
@@ -155,7 +163,9 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Right");
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
-                anim.ResetTrigger("Reset"); break;
+                anim.ResetTrigger("Reset");
+                textBox.text = "I dont think it's supposed to be there";
+                break;
 
             case CharacterEmotion.Right:
                 anim.ResetTrigger("Idle");
@@ -167,7 +177,9 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.SetTrigger("Right");
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
-                anim.ResetTrigger("Reset"); break;
+                anim.ResetTrigger("Reset");
+                textBox.text = "Needs a right spin";
+                break;
 
             case CharacterEmotion.Left:
                 anim.ResetTrigger("Idle");
@@ -179,7 +191,9 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Right");
                 anim.SetTrigger("Left");
                 anim.ResetTrigger("Spin");
-                anim.ResetTrigger("Reset"); break;
+                anim.ResetTrigger("Reset");
+                textBox.text = "A little spin to the left";
+                break;
 
             case CharacterEmotion.Spin:
                 anim.ResetTrigger("Idle");
@@ -191,7 +205,9 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Right");
                 anim.ResetTrigger("Left");
                 anim.SetTrigger("Spin");
-                anim.ResetTrigger("Reset"); break;
+                anim.ResetTrigger("Reset");
+                textBox.text = "Not the right angle here";
+                break;
 
             case CharacterEmotion.Reset:
                 anim.ResetTrigger("Idle");
@@ -203,7 +219,8 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Right");
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
-                anim.SetTrigger("Reset"); 
+                anim.SetTrigger("Reset");
+                textBox.text = "";
                 break;
         }
     }
