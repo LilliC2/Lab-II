@@ -80,7 +80,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
-                textBox.text = "";
+                textBox.text = "We need to restore the painting";
                 break;
 
             case CharacterEmotion.Idle:
@@ -164,7 +164,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
-                textBox.text = "I dont think it's supposed to be there";
+                textBox.text = "I think something is off";
                 break;
 
             case CharacterEmotion.Right:
