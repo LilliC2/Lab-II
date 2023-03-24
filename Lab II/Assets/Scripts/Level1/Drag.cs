@@ -19,7 +19,7 @@ public class Drag : GameBehaviour
 
 
         //left click
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && _GM.gameState == GameManager.GameState.Playing)
         {
             //no object selected
             if(selectedObject == null)
@@ -30,8 +30,8 @@ public class Drag : GameBehaviour
                 //did we hit something
                 if(hit.collider != null)
                 {
-                    //check for drag tag, is dragable
-                    if (!hit.collider.CompareTag("Drag")) 
+                    //check for drag tag, is dragable, check if in playing mode
+                    if (!hit.collider.CompareTag("Drag") ) 
                         return; //exit
                     selectedObject = hit.collider.gameObject;
                     objectHeight = selectedObject.transform.position.y;

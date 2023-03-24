@@ -75,7 +75,7 @@ public class Level1Controller : Singleton<Level1Controller>
         if(layerStatus == LayerStatus.Layer1) ExecuteAfterSeconds(8, () => MoveCamera(cameraPosInPuzzle));
 
 
-
+        ExecuteAfterSeconds(10, () => _GM.GameStatePlaying());
         //bring in layer 1 tray
         ExecuteAfterSeconds(10, () => BringTray(1));
 
@@ -179,6 +179,8 @@ public class Level1Controller : Singleton<Level1Controller>
     {
         StartCoroutine(Hints());
     }
+
+
 
     IEnumerator Hints()
     {
