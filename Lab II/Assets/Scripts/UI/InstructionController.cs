@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static GameManager;
 
 public class InstructionController : GameBehaviour
 {
@@ -72,6 +73,7 @@ public class InstructionController : GameBehaviour
     {
         instructionPanel.SetActive(false);
         ingamePanel.SetActive(true);
+        _GM.gameState = GameState.Playing;
     }
 }
 
