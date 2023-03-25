@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.UI;
 
 public class Level1Controller : Singleton<Level1Controller>
 {
@@ -44,6 +45,9 @@ public class Level1Controller : Singleton<Level1Controller>
     float hintsUsed;
     public GameObject finishedImage;
     public TMP_Text hintsRemaining;
+    public GameObject hintToken1;
+    public GameObject hintToken2;
+    public GameObject hintToken3;
 
     public enum LayerStatus { Layer1, Layer2, Layer3 }; 
     public LayerStatus layerStatus;
@@ -192,9 +196,22 @@ public class Level1Controller : Singleton<Level1Controller>
 
             yield return new WaitForSeconds(3);
 
+            HintTokenCounter();
+
             finishedImage.SetActive(false);
         }
         
     }
 
+    public void HintTokenCounter()
+    {
+        if (hintsUsed == 1)
+            hintToken1.GetComponent<Image>().color = Color.grey;
+
+        if (hintsUsed == 2)
+            hintToken2.GetComponent<Image>().color = Color.grey;
+
+        if (hintsUsed == 3)
+            hintToken3.GetComponent<Image>().color = Color.grey;
+    }
 }
