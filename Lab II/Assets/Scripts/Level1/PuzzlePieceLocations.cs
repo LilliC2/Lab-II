@@ -6,7 +6,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
-using static ProtagonistAnimator;
+
 
 public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 {
@@ -47,6 +47,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     bool rotating = false;
 
     float baseRange = 5;
+
+    bool hasReset = false;
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +92,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //check if player is dragging an object
         if (dragScript.selectedObject != null)
         {
+            hasReset = false;
             lastObjectHeld = dragScript.selectedObject;
 
 
@@ -120,7 +123,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     {
                         //print("Happy");
                         //_CA.face = CharacterAnimator.Face.happy;
-                        _PA.characterEmotion = CharacterEmotion.Correct;
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Correct;
 
                     }
                     
@@ -128,19 +131,19 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     {
                         print("go right");
                         //Right rotation 270
-                        _PA.characterEmotion = CharacterEmotion.Right;
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Right;
                     }
                     if (_puzzlePieces[j].transform.eulerAngles.y == 180 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange)
                     {
                         print("go multiple");
                         //Multiple rotation
-                        _PA.characterEmotion = CharacterEmotion.Spin;
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Spin;
                     }
                     if (_puzzlePieces[j].transform.eulerAngles.y == 90 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > baseRange)
                     {
                         print("Emotion Left");
                         //Left rotation 180
-                        _PA.characterEmotion = CharacterEmotion.Left;
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Left;
 
                     }
                     //SMILE EMOTE
@@ -148,7 +151,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     {
                         // print("Smile");
                         //_CA.face = CharacterAnimator.Face.smile;
-                        _PA.characterEmotion = CharacterEmotion.Close;
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Close;
 
                     }
 
@@ -157,7 +160,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     {
                         // print("Neutral");
                         //_CA.face = CharacterAnimator.Face.reset;
-                        _PA.characterEmotion = CharacterEmotion.Medium;
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Medium;
 
                     }
                     //SAD EMOTE
@@ -165,7 +168,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     {
                         //    print("Sad");
                         //_CA.face = CharacterAnimator.Face.sad;
-                        _PA.characterEmotion = CharacterEmotion.Far;
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Far;
 
                     }
                     # endregion
@@ -210,12 +213,16 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         }
 
 
-        if(dragScript.selectedObject == null)
+        if(dragScript.selectedObject == null && !hasReset)
         {
             print("NOTHIN");
-
-
+            _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Reset;
+            hasReset = true;
+            //ExecuteAfterSeconds(2, () => PlayIdle());
         }
+        else if (dragScript.selectedObject == null && hasReset)
+            ExecuteAfterSeconds(2, () => PlayIdle());
+
 
         //when item is dropped, make last object held unable to be picked up and set position
         if (dragScript.selectedObject == null && inRangeOfGoal == true)
@@ -238,6 +245,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             
             return;
         }
+    }
+
+    public void PlayIdle()
+    {
+        print("idling");
+        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Idle;
+        
     }
 
     void RotatingReset()
