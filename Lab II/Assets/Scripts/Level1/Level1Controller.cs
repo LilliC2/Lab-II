@@ -88,6 +88,8 @@ public class Level1Controller : Singleton<Level1Controller>
             //check if layer 1 is complete
             if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL1) && layerStatus == LayerStatus.Layer1)
             {
+                layer2Tray.SetActive(false);
+
                 layer1Protection.SetActive(true);
 
                 //remove layer 1 tray
@@ -101,6 +103,8 @@ public class Level1Controller : Singleton<Level1Controller>
             //check if layer 2 is compelte
             if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL2) && layerStatus == LayerStatus.Layer2)
             {
+                layer2Tray.SetActive(true);
+
                 layer2Protection.SetActive(true);
                 print("level 2 done");
                 //remove layer 2 tray
@@ -126,67 +130,7 @@ public class Level1Controller : Singleton<Level1Controller>
 
             }
         }
-        
-        ////show complete puzzle
-
-        //ExecuteAfterSeconds(2, () => RaisePieces());
-        ////if (moveOver == false) 
-
-
-        ////scatter puzzle
-        //if (!scatter) ExecuteAfterSeconds(10, () => scatter = _PPL.RandomisePieces());
-
-
-
-        ////move camera over to make room for tray
-        ////ADD WAIT TIME 
-        //if(layerStatus == LayerStatus.Layer1) ExecuteAfterSeconds(8, () => MoveCamera(cameraPosInPuzzle));
-
-
-        //ExecuteAfterSeconds(10, () => _GM.GameStatePlaying());
-        ////bring in layer 1 tray
-        //ExecuteAfterSeconds(10, () => BringTray(1));
-
-        ////check if layer 1 is complete
-        //if(_PPL.CheckLayerStatus(_PPL.puzzlePiecesL1) && layerStatus == LayerStatus.Layer1)
-        //{
-        //    layer1Protection.SetActive(true);
-
-        //    //remove layer 1 tray
-        //    layer1Tray.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(layerEase);
-        //    //bring in layer 2 tray
-        //    ExecuteAfterSeconds(2, () => BringTray(2));
-        //    layerStatus = LayerStatus.Layer2;
-        //}
-
-
-        ////check if layer 2 is compelte
-        //if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL2) && layerStatus == LayerStatus.Layer2)
-        //{
-        //    layer2Protection.SetActive(true);
-        //    print("level 2 done");
-        //    //remove layer 2 tray
-        //    layer2Tray.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(layerEase);
-        //    //bring in layer 3 tray
-        //    ExecuteAfterSeconds(2, () => BringTray(3));
-        //    layerStatus = LayerStatus.Layer3;
-        //}
-
-        ////check if layer 3 is complete
-        //if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL3) && layerStatus == LayerStatus.Layer3)
-        //{
-        //    print("donje");
-        //    //move camera to focus on canvas and remove tray
-        //    ExecuteAfterSeconds(1, () => MoveCamera(cameraPosCanvas));
-        //    //flatten puzzle
-        //    ExecuteAfterSeconds(5, () => FlattenPieces());
-        //    _UI.ActivateWinPanel();
-
-        //    //level complete
-
-
-        //}
-
+            
 
 
     }
@@ -210,16 +154,15 @@ public class Level1Controller : Singleton<Level1Controller>
         //currently not working so return to skip this
         //return;
         moveOver = true;
-        layer1Pieces.transform.DOMoveX(60f, 1f);
-        layer2Pieces.transform.DOMoveX(60f, 1f);
-        layer3Pieces.transform.DOMoveX(60f, 1f);
+        layer1Pieces.transform.DOMoveX(70, 1f);
+        layer2Pieces.transform.DOMoveX(70f, 1f);
+        layer3Pieces.transform.DOMoveX(70f, 1f);
         
         
     }
 
     void BringTray(int _layer)
     {
-        
 
         switch(_layer)
         {
