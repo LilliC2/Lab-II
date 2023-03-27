@@ -12,6 +12,7 @@ public class InstructionController : GameBehaviour
     public GameObject page3;
     public GameObject page4;
     public GameObject page5;
+    public GameObject page6;
 
     public void Start()
     {
@@ -20,6 +21,7 @@ public class InstructionController : GameBehaviour
         page3.SetActive(false);
         page4.SetActive(false);
         page5.SetActive(false);
+        page6.SetActive(false);
         ingamePanel.SetActive(false);
         instructionPanel.SetActive(true);
     }
@@ -31,6 +33,7 @@ public class InstructionController : GameBehaviour
         page3.SetActive(false);
         page4.SetActive(false);
         page5.SetActive(false);
+        page6.SetActive(false);
     }
 
     public void Page2()
@@ -40,6 +43,8 @@ public class InstructionController : GameBehaviour
         page3.SetActive(false);
         page4.SetActive(false);
         page5.SetActive(false);
+        page6.SetActive(false);
+
     }
 
     public void Page3()
@@ -49,6 +54,8 @@ public class InstructionController : GameBehaviour
         page3.SetActive(true);
         page4.SetActive(false);
         page5.SetActive(false);
+        page6.SetActive(false);
+
     }
 
     public void Page4()
@@ -58,6 +65,8 @@ public class InstructionController : GameBehaviour
         page3.SetActive(false);
         page4.SetActive(true);
         page5.SetActive(false);
+        page6.SetActive(false);
+
     }
 
     public void Page5()
@@ -67,6 +76,19 @@ public class InstructionController : GameBehaviour
         page3.SetActive(false);
         page4.SetActive(false);
         page5.SetActive(true);
+        page6.SetActive(false);
+
+    }
+
+    public void Page6()
+    {
+        page1.SetActive(false);
+        page2.SetActive(false);
+        page3.SetActive(false);
+        page4.SetActive(false);
+        page5.SetActive(false);
+        page6.SetActive(true);
+
     }
 
     public void CloseInstructions()
