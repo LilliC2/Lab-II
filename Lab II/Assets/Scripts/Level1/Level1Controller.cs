@@ -57,7 +57,7 @@ public class Level1Controller : Singleton<Level1Controller>
     {
         moveOver = false;
         layerStatus = LayerStatus.Layer1;
-        ExecuteAfterSeconds(6, () => MovePieces());
+        
     }
 
     // Update is called once per frame
@@ -66,6 +66,13 @@ public class Level1Controller : Singleton<Level1Controller>
         if(_GM.gameState == GameManager.GameState.Playing)
         {
             //show complete puzzle
+            if(!moveOver)
+            {
+                ExecuteAfterSeconds(6, () => MovePieces());
+                moveOver = true;
+            }
+            
+
 
             ExecuteAfterSeconds(2, () => RaisePieces());
             //if (moveOver == false) 
@@ -88,7 +95,6 @@ public class Level1Controller : Singleton<Level1Controller>
             //check if layer 1 is complete
             if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL1) && layerStatus == LayerStatus.Layer1)
             {
-                layer2Tray.SetActive(false);
 
                 layer1Protection.SetActive(true);
 
@@ -103,7 +109,6 @@ public class Level1Controller : Singleton<Level1Controller>
             //check if layer 2 is compelte
             if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL2) && layerStatus == LayerStatus.Layer2)
             {
-                layer2Tray.SetActive(true);
 
                 layer2Protection.SetActive(true);
                 print("level 2 done");
