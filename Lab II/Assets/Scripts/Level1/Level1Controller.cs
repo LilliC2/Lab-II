@@ -40,6 +40,7 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject DeactiveTrayPos;
 
     bool moveOver;
+    bool incrementedHint;
 
     public GameObject hintCanvas;
     float hintsUsed;
@@ -193,6 +194,7 @@ public class Level1Controller : Singleton<Level1Controller>
     
     public void HintsButton()
     {
+        if(finishedImage.active == false) incrementedHint = false;
         StartCoroutine(Hints());
     }
 
@@ -202,7 +204,12 @@ public class Level1Controller : Singleton<Level1Controller>
     {
         if(hintsUsed <3)
         {
-            hintsUsed++;
+            if(!incrementedHint)
+            {
+                hintsUsed++;
+                incrementedHint = true;
+            }
+            
 
             finishedImage.SetActive(true);
 
