@@ -11,6 +11,7 @@ public class GameBehaviour : LC.Behaviour //inherits from
     protected static UIManager _UI { get { return UIManager.INSTANCE; } }
     protected static CharacterAnimator _CA { get { return CharacterAnimator.INSTANCE; } }
     protected static ProtagonistAnimator _PA { get { return ProtagonistAnimator.INSTANCE; } }
+    protected static SnapEffect _SA { get { return SnapEffect.INSTANCE; } }
 
 
 }

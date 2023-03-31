@@ -201,6 +201,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                 //lastObjectHeld.gameObject.transform.localScale = new Vector3(lOHscale.x-2, lOHscale.y-2f, lOHscale.z-2);
             }
 
+
         }
         else
         {
@@ -236,8 +237,11 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                 {
                     lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
                     lastObjectHeld.transform.rotation = _puzzlePiecesEndPos[index].transform.rotation;
+                    lastObjectHeld.transform.localScale = pieceScale;
 
                     lastObjectHeld.tag = "complete";
+
+                    _SA.Snap(_puzzlePiecesEndPos[index]);
                     snapped = true;
                 }
             }
@@ -311,7 +315,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
 
 
-                //puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(2, 2, 2);
+                puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(2, 2, 2);
 
                 puzzlePiecesL3[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f), 8, UnityEngine.Random.Range(10f, -3.4f)));
 
