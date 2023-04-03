@@ -49,6 +49,7 @@ public class Level1Controller : Singleton<Level1Controller>
     float hintsUsed;
     public GameObject finishedImage;
     public TMP_Text hintsRemaining;
+    public GameObject hintWarning;
     public GameObject hintToken1;
     public GameObject hintToken2;
     public GameObject hintToken3;
@@ -257,5 +258,15 @@ public class Level1Controller : Singleton<Level1Controller>
 
         if (hintsUsed == 3)
             hintToken3.GetComponent<Image>().color = Color.grey;
+    }
+
+    public void WarningOn()
+    {
+        hintWarning.SetActive(true);
+    }
+
+    public void WarningOff()
+    {
+        hintWarning.SetActive(false);
     }
 }
