@@ -77,6 +77,9 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                 break;
             case Level1Controller.LayerStatus.Layer3:
                 DragAndDropPuzzlePieces(puzzlePiecesL3, puzzlePiecesEndPosL3);
+                happyRadius = 5;
+                smileRadius = 12;
+                neutralRadius = 18;
                 break;
 
         }
@@ -207,14 +210,14 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //object in range of pallette
         if (dragScript.selectedObject == null && (lastObjectHeld.transform.position.x > 13 || lastObjectHeld.transform.position.x < -22))
         {
-
+            //make smaller pieces bigger
             if ((_L1C.layerStatus != Level1Controller.LayerStatus.Layer3))
             {
                 lastObjectHeld.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 // Vector3 lOHscale =lastObjectHeld.gameObject.transform.localScale;
                 //lastObjectHeld.gameObject.transform.localScale = new Vector3(lOHscale.x-2, lOHscale.y-2f, lOHscale.z-2);
             }
-
+            if(lastObjectHeld.name == "HairTriangle") lastObjectHeld.gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
 
         }
         else
@@ -317,9 +320,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         {
             for (int i = 0; i < puzzlePiecesL2.Length; i++)
             {
+                if(puzzlePiecesL2[i].name == "HairTriangle")
+                {
+                    puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
+                }
+                else puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
 
-                puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
                 puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f),5, UnityEngine.Random.Range(10f, -3.4f)));
 
@@ -334,7 +341,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
 
 
-                puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(2, 2, 2);
+                puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(3, 3, 3);
 
                 puzzlePiecesL3[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f), 8, UnityEngine.Random.Range(10f, -3.4f)));
 
