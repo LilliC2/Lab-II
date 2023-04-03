@@ -185,9 +185,9 @@ public class Level1Controller : Singleton<Level1Controller>
         //currently not working so return to skip this
         //return;
         moveOver = true;
-        layer1Pieces.transform.DOMoveX(100, 1f);
-        layer2Pieces.transform.DOMoveX(100f, 1f);
-        layer3Pieces.transform.DOMoveX(100f, 1f);
+        layer1Pieces.transform.DOMoveZ(100, 1f);
+        layer2Pieces.transform.DOMoveZ(100f, 1f);
+        layer3Pieces.transform.DOMoveZ(100f, 1f);
         
         
     }
