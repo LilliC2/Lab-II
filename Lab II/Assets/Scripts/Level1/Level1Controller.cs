@@ -9,12 +9,12 @@ public class Level1Controller : Singleton<Level1Controller>
 {
     //Gameobjects
 
-    //puzzle pieces and tray
+    [Header("Pieces and Tray")]
     public GameObject layer1TrayPieces;
     public GameObject layer2TrayPieces;
     public GameObject layer3TrayPieces;
 
-    //just tray
+    [Header("Tray")]
     public GameObject layer1Tray;
     public GameObject layer2Tray;
     public GameObject layer3Tray;
@@ -22,11 +22,12 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject layer1Protection;
     public GameObject layer2Protection;
 
-    //just pieces
+    [Header("Pieces")]
     public GameObject layer1Pieces;
     public GameObject layer2Pieces;
     public GameObject layer3Pieces;
-    
+
+    [Header("Camera")]
     public GameObject cameraPosInPuzzle;
     public GameObject cameraPosCanvas;
     public GameObject mainCamera;
@@ -42,6 +43,7 @@ public class Level1Controller : Singleton<Level1Controller>
     bool moveOver;
     bool incrementedHint;
 
+    [Header("UI")]
     public GameObject hintCanvas;
     float hintsUsed;
     public GameObject finishedImage;
@@ -49,6 +51,11 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject hintToken1;
     public GameObject hintToken2;
     public GameObject hintToken3;
+
+    [Header("Animation")]
+    public Animator layer1Animatior;
+    public Animator layer2Animatior;
+    public Animator layer3Animatior;
 
     public enum LayerStatus { Layer1, Layer2, Layer3 }; 
     public LayerStatus layerStatus;
@@ -75,7 +82,7 @@ public class Level1Controller : Singleton<Level1Controller>
             
 
 
-            ExecuteAfterSeconds(2, () => RaisePieces());
+            ExecuteAfterSeconds(2, () => ScatterPieces());
             //if (moveOver == false) 
 
 
@@ -148,7 +155,7 @@ public class Level1Controller : Singleton<Level1Controller>
         layer3Pieces.transform.DOMoveY(0, 3);
     }
 
-    void RaisePieces()
+    void ScatterPieces()
     {
         layer1Pieces.transform.DOMoveY(5f, 3);
         layer2Pieces.transform.DOMoveY(5f, 3);

@@ -249,7 +249,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             }
 
             //Check if rotation is the same
-            if ((lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.z < 0.5) || rectangele) ;
+            if ((lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.z < 0.5) || rectangele) 
             {
                 if (!snapped)
                 {
