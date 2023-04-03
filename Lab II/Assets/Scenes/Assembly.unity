@@ -13570,9 +13570,9 @@ MonoBehaviour:
   hintToken1: {fileID: 1830540569}
   hintToken2: {fileID: 1574137924}
   hintToken3: {fileID: 1868101084}
-  layer1Animatior: {fileID: 0}
-  layer2Animatior: {fileID: 0}
-  layer3Animatior: {fileID: 0}
+  layer1Animatior: {fileID: 655302436}
+  layer2Animatior: {fileID: 1766649179}
+  layer3Animatior: {fileID: 2131374167}
   layerStatus: 0
 --- !u!4 &526480632
 Transform:
@@ -16006,7 +16006,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655302431}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 60200d44bd400704aaef68639087a7b0, type: 2}
   m_CullingMode: 0
@@ -41506,7 +41506,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766649173}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d8c5a2763c4483e4abbae70a95c8974d, type: 2}
   m_CullingMode: 0
@@ -49365,7 +49365,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131374161}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 85d4686e12976474695ec2f22848671a, type: 2}
   m_CullingMode: 0

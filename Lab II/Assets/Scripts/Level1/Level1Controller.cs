@@ -33,6 +33,7 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject mainCamera;
     
     bool scatter = false;
+    bool scatterRnd = false;
     float layerSpeed = 2;
     public Ease layerEase;
     public Ease pieceScatterEase;
@@ -79,15 +80,22 @@ public class Level1Controller : Singleton<Level1Controller>
                 ExecuteAfterSeconds(6, () => MovePieces());
                 moveOver = true;
             }
-            
 
 
-            ExecuteAfterSeconds(2, () => ScatterPieces());
+
+            if (!scatterRnd)
+            {
+                ExecuteAfterSeconds(4, () => ScatterPieces());
+                scatterRnd = true;
+            }
             //if (moveOver == false) 
 
 
             //scatter puzzle
-            if (!scatter) ExecuteAfterSeconds(10, () => scatter = _PPL.RandomisePieces());
+            if (!scatter) {
+                ExecuteAfterSeconds(7, () => ResetPieces());
+                ExecuteAfterSeconds(10, () => scatter = _PPL.RandomisePieces()); 
+            }
 
 
 
@@ -157,19 +165,29 @@ public class Level1Controller : Singleton<Level1Controller>
 
     void ScatterPieces()
     {
-        layer1Pieces.transform.DOMoveY(5f, 3);
-        layer2Pieces.transform.DOMoveY(5f, 3);
-        layer3Pieces.transform.DOMoveY(5f, 3);
+        layer1Animatior.SetTrigger("scatter");
+        layer2Animatior.SetTrigger("scatter");
+        layer3Animatior.SetTrigger("scatter");
+
+        
     }
 
+    void ResetPieces()
+    {
+
+
+        layer1Animatior.enabled = false;
+        layer2Animatior.enabled = false;
+        layer3Animatior.enabled = false;
+    }
     void MovePieces()
     {
         //currently not working so return to skip this
         //return;
         moveOver = true;
-        layer1Pieces.transform.DOMoveX(70, 1f);
-        layer2Pieces.transform.DOMoveX(70f, 1f);
-        layer3Pieces.transform.DOMoveX(70f, 1f);
+        layer1Pieces.transform.DOMoveX(100, 1f);
+        layer2Pieces.transform.DOMoveX(100f, 1f);
+        layer3Pieces.transform.DOMoveX(100f, 1f);
         
         
     }
