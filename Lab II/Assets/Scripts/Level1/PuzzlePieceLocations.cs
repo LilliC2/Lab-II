@@ -116,7 +116,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius)
                     {
                         inRangeOfGoal = true;
-                        print("CLOSE");
 
                         
                         //lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
@@ -129,13 +128,11 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     
                     if (_puzzlePieces[j].transform.eulerAngles.y == 270 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius)
                     {
-                        print("go right");
                         //Right rotation 270
                         _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Right;
                     }
                     else if (_puzzlePieces[j].transform.eulerAngles.y == 180 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius)
                     {
-                        print("go multiple");
 
                         if(_puzzlePieces[j].name == "RedRectangle")
                         {
@@ -150,7 +147,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     }
                     else if (_puzzlePieces[j].transform.eulerAngles.y == 90 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius)
                     {
-                        print("Emotion Left");
                         //Left rotation 180
                         _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Left;
 
@@ -158,7 +154,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     //HAPPY EMOTE
                     else if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius && (_puzzlePieces[j].transform.eulerAngles.y <= 1) && _puzzlePieces[j].transform.eulerAngles.y > -1)
                     {
-                        print("Happy");
                         //_CA.face = CharacterAnimator.Face.happy;
                         _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Correct;
 
@@ -233,22 +228,18 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
         if(dragScript.selectedObject == null && !hasReset)
         {
-            print("NOTHIN");
             _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Reset;
             hasReset = true;
             //ExecuteAfterSeconds(2, () => PlayIdle());
         }
         else if (dragScript.selectedObject == null && hasReset)
             ExecuteAfterSeconds(2, () => PlayIdle());
-        print(lastObjectHeld.transform.rotation.y - 180);
 
         //when item is dropped, make last object held unable to be picked up and set position
         if (dragScript.selectedObject == null && inRangeOfGoal == true)
         {
-            print(lastObjectHeld.transform.rotation.y - 180);
             if (lastObjectHeld.name == "RedRectanlge" && lastObjectHeld.transform.rotation.y > -181 && lastObjectHeld.transform.rotation.y < -178)
             {
-                print("should snap");
             }
 
             //Check if rotation is the same
@@ -275,7 +266,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
     public void PlayIdle()
     {
-        print("idling");
         _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Idle;
         
     }

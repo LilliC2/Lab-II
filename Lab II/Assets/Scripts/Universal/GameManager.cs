@@ -28,7 +28,6 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
 
-        print(gameState);
 
         if (gameState == GameState.Playing)
         {
