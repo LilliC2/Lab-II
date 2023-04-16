@@ -186,6 +186,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     # endregion
                 }
             }
+            //rotate to the right
             if (Input.GetKeyDown(KeyCode.R))
             {
                 //if not 360
@@ -200,6 +201,24 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                 }
                 
             }
+
+            //rotate to the left
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                //if not 360
+                if (!rotating)
+                {
+                    rotating = true;
+                    Vector3 goalRotation = lastObjectHeld.transform.eulerAngles + new Vector3(0, -90, 0);
+                    lastObjectHeld.transform.DORotate(goalRotation, 1);
+
+                    ExecuteAfterSeconds(1, () => RotatingReset());
+
+                }
+
+            }
+
+
         }
 
         //object in range of pallette
