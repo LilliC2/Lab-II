@@ -136,7 +136,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
-                textBox.text = "You're close!";
+                textBox.text = "Just a little bit more!";
                 break;
 
             case CharacterEmotion.Correct:
@@ -206,7 +206,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.SetTrigger("Spin");
                 anim.ResetTrigger("Reset");
-                textBox.text = "Not the right angle here";
+                textBox.text = "I think it's upside-down";
                 break;
 
             case CharacterEmotion.Reset:

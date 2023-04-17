@@ -144,7 +144,9 @@ public class Level1Controller : Singleton<Level1Controller>
                 ExecuteAfterSeconds(1, () => MoveCamera(cameraPosCanvas));
                 //flatten puzzle
                 ExecuteAfterSeconds(5, () => FlattenPieces());
-                _UI.ActivateWinPanel();
+                ExecuteAfterSeconds(3, () => _UI.ActivateWinPanel());
+                
+                
 
                 //level complete
 
