@@ -55,7 +55,7 @@ public class GameManager : Singleton<GameManager>
 
         if(gameState == GameState.Victory)
         {
-            _AC.Victory.Play();
+            
         }
 
     }

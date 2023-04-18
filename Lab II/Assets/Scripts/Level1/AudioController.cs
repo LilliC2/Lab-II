@@ -44,11 +44,12 @@ public class AudioController : Singleton<AudioController>
     public AudioSource Victory;
 
 
+    public int noiseCooldownTime;
     int random;
     bool randomised;
 
+    bool noiseCoolDownBool = false;
     bool noisePlayed;
-
     string prevFaceState;
 
     // Start is called before the first frame update
@@ -68,44 +69,53 @@ public class AudioController : Singleton<AudioController>
             print(random);
             randomised = true;
         }
-
+        print(noiseCoolDownBool);
         
 
         switch(_PA.characterEmotion)
         {
             case ProtagonistAnimator.CharacterEmotion.Idle:
 
-                if (random == 3 && !noisePlayed)
+                if (random == 3 && !noiseCoolDownBool && !noisePlayed)
                 {
                     noisePlayed = true;
                     RandomiseClip(neutralProtag);
+                    StartCoroutine(NoiseCooldown());
                 }
 
-                print("Play neutral noise");
+                print("Play idle noise");
 
                 break;
             case ProtagonistAnimator.CharacterEmotion.Far:
 
                 //turn off other sounds
-                if (random == 3 && !noisePlayed)
+                if (random == 3 && !noiseCoolDownBool && !noisePlayed)
                 {
-                    noisePlayed = true; RandomiseClip(sadProtag);
+                    noisePlayed = true;
+                    RandomiseClip(sadProtag);
+                    StartCoroutine(NoiseCooldown());
                 }
-                print("Play sad noise");
+
+                print("Play far noise");
 
                 break;
             case ProtagonistAnimator.CharacterEmotion.Close:
 
-                if (random == 3 && !noisePlayed)
+                if (random == 3 && !noiseCoolDownBool && !noisePlayed)
                 {
-                    noisePlayed = true; RandomiseClip(closeProtag);
+                    noisePlayed = true;
+                    RandomiseClip(closeProtag);
+                    StartCoroutine(NoiseCooldown());
                 }
+                print("Play close noise");
                 break;
             case ProtagonistAnimator.CharacterEmotion.Correct:
                 //turn off other sounds
-                if (random == 3 && !noisePlayed)
+                if (random == 3 && !noiseCoolDownBool && !noisePlayed)
                 {
-                    noisePlayed = true; RandomiseClip(correctProtag);
+                    noisePlayed = true;
+                    RandomiseClip(correctProtag);
+                    StartCoroutine(NoiseCooldown());
                 }
                 print("Play correct noise");
 
@@ -118,7 +128,6 @@ public class AudioController : Singleton<AudioController>
     void RandomiseClip(AudioSource[] _audioSourceArray)
     {
         _audioSourceArray[RandomIntBetweenTwoInt(0, _audioSourceArray.Length)].Play();
-        print("playing " + _audioSourceArray[RandomIntBetweenTwoInt(0, _audioSourceArray.Length)].ToString());
     }
 
     void CheckIfFaceStateChanged()
@@ -133,5 +142,12 @@ public class AudioController : Singleton<AudioController>
             noisePlayed = false;
         }
 
+    }
+
+    IEnumerator NoiseCooldown()
+    {
+        noiseCoolDownBool = true;
+        yield return new WaitForSeconds(noiseCooldownTime);
+        noiseCoolDownBool = false;
     }
 }
