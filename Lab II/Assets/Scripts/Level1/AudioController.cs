@@ -17,15 +17,30 @@ public class AudioController : Singleton<AudioController>
     public AudioSource Victory;
 
 
+    int random;
+    bool randomised;
+
+    string prevFaceState;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        CheckIfFaceStateChanged();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
+        if(!randomised)
+        {
+            random = RandomIntBetweenTwoInt(1, 3);
+            randomised = true;
+        }
+
+        
+
         switch(_CA.face)
         {
             case CharacterAnimator.Face.reset:
@@ -35,7 +50,8 @@ public class AudioController : Singleton<AudioController>
                 if (correctAS.isPlaying) correctAS.Stop();
                 if (farAS.isPlaying) farAS.Stop();
 
-                if (!neutralAS.isPlaying) neutralAS.Play();
+                //1/3 chance to play sound
+                if (!neutralAS.isPlaying && random == 3) neutralAS.Play();
 
                 print("Play neutral noise");
 
@@ -47,7 +63,7 @@ public class AudioController : Singleton<AudioController>
                 if(closeAS.isPlaying) closeAS.Stop();
                 if(correctAS.isPlaying) correctAS.Stop();
 
-                if (!farAS.isPlaying) farAS.Play();
+                if (!farAS.isPlaying && random == 3) farAS.Play();
 
                 print("Play sad noise");
 
@@ -59,7 +75,7 @@ public class AudioController : Singleton<AudioController>
                 if (correctAS.isPlaying) correctAS.Stop();
                 if (farAS.isPlaying) farAS.Stop();
 
-                if (!closeAS.isPlaying) closeAS.Play();
+                if (!closeAS.isPlaying && random == 3) closeAS.Play();
                 print("Play close noise");
 
                 break;
@@ -69,13 +85,22 @@ public class AudioController : Singleton<AudioController>
                 if (closeAS.isPlaying) closeAS.Stop();
                 if (farAS.isPlaying) farAS.Stop();
 
-                if (correctAS.isPlaying) correctAS.Play();
+                if (correctAS.isPlaying && random == 3) correctAS.Play();
                 print("Play correct noise");
 
                 break;
 
         }
+        CheckIfFaceStateChanged();
     }
 
-    
+    void CheckIfFaceStateChanged()
+    {
+        if((_CA.face).ToString() != prevFaceState)
+        {
+            prevFaceState = _CA.face.ToString();
+            randomised = false;
+        }
+
+    }
 }

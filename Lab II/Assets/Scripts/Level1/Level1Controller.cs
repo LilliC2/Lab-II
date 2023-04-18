@@ -145,8 +145,8 @@ public class Level1Controller : Singleton<Level1Controller>
                 //flatten puzzle
                 ExecuteAfterSeconds(5, () => FlattenPieces());
                 ExecuteAfterSeconds(3, () => _UI.ActivateWinPanel());
-                
-                
+
+                _GM.gameState = GameManager.GameState.Victory;
 
                 //level complete
 
