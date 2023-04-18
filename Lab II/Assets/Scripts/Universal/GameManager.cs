@@ -53,6 +53,11 @@ public class GameManager : Singleton<GameManager>
             OnResume();
         }
 
+        if(gameState == GameState.Victory)
+        {
+            _AC.Victory.Play();
+        }
+
     }
 
     public void GameStatePlaying()

@@ -273,6 +273,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     lastObjectHeld.tag = "complete";
 
                     _SA.Snap(_puzzlePiecesEndPos[index]);
+
+                    _AC.snapChime.Play();
                     snapped = true;
                 }
             }

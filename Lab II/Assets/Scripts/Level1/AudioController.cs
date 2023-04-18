@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioController : GameBehaviour
+public class AudioController : Singleton<AudioController>
 {
     public AudioSource neutralAS;
     public AudioSource farAS;
@@ -10,6 +10,11 @@ public class AudioController : GameBehaviour
     public AudioSource correctAS;
     public AudioSource spinAS;
     public AudioSource closeAS;
+
+
+
+    public AudioSource snapChime;
+    public AudioSource Victory;
 
 
     // Start is called before the first frame update
