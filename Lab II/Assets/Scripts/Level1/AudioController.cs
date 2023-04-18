@@ -1,24 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioController : Singleton<AudioController>
 {
-    public AudioSource neutralAS;
-    public AudioSource farAS;
-    public AudioSource almostAS;
-    public AudioSource correctAS;
-    public AudioSource spinAS;
-    public AudioSource closeAS;
+    [Header("Protaginist Sounds")]
+    [Header("Annoyed")]
+    public AudioSource[] annoyedProtag;
+    [Header("Flip")]
+    public AudioSource[] flipProtag;
+    [Header("Happy")]
+    public AudioSource[] happyProtag;
+    [Header("Intriguie")]
+    public AudioSource[] intriguieProtag;
+    [Header("Left")]
+    public AudioSource[] leftProtag;
+    [Header("Mad")]
+    public AudioSource[] madProtag;
+    [Header("Right")]
+    public AudioSource[] rightProtag;
+    [Header("Sad")]
+    public AudioSource[] sadProtag;
+    [Header("Surprised")]
+    public AudioSource[] surprisedProtag;
+    [Header("Wrong")]
+    public AudioSource[] wrongProtag;
+    [Header("Almost")]
+    public AudioSource[] almostProtag;
+    [Header("Close")]
+    public AudioSource[] closeProtag;
+    [Header("Confused")]
+    public AudioSource[] confusedProtag;
+    [Header("Correct")]
+    public AudioSource[] correctProtag;
+    [Header("Neutral")]
+    public AudioSource[] neutralProtag;
 
 
 
+    [Header("Sound Effects")]
     public AudioSource snapChime;
     public AudioSource Victory;
 
 
     int random;
     bool randomised;
+
+    bool noisePlayed;
 
     string prevFaceState;
 
@@ -35,57 +64,49 @@ public class AudioController : Singleton<AudioController>
 
         if(!randomised)
         {
-            random = RandomIntBetweenTwoInt(1, 3);
+            random = RandomIntBetweenTwoInt(1, 4);
+            print(random);
             randomised = true;
         }
 
         
 
-        switch(_CA.face)
+        switch(_PA.characterEmotion)
         {
-            case CharacterAnimator.Face.reset:
+            case ProtagonistAnimator.CharacterEmotion.Idle:
 
-                //turn off other sounds
-                if (closeAS.isPlaying) closeAS.Stop();
-                if (correctAS.isPlaying) correctAS.Stop();
-                if (farAS.isPlaying) farAS.Stop();
-
-                //1/3 chance to play sound
-                if (!neutralAS.isPlaying && random == 3) neutralAS.Play();
+                if (random == 3 && !noisePlayed)
+                {
+                    noisePlayed = true;
+                    RandomiseClip(neutralProtag);
+                }
 
                 print("Play neutral noise");
 
                 break;
-            case CharacterAnimator.Face.sad:
+            case ProtagonistAnimator.CharacterEmotion.Far:
 
                 //turn off other sounds
-                if(neutralAS.isPlaying) neutralAS.Stop();
-                if(closeAS.isPlaying) closeAS.Stop();
-                if(correctAS.isPlaying) correctAS.Stop();
-
-                if (!farAS.isPlaying && random == 3) farAS.Play();
-
+                if (random == 3 && !noisePlayed)
+                {
+                    noisePlayed = true; RandomiseClip(sadProtag);
+                }
                 print("Play sad noise");
 
                 break;
-            case CharacterAnimator.Face.smile:
+            case ProtagonistAnimator.CharacterEmotion.Close:
 
-                //turn off other sounds
-                if (neutralAS.isPlaying) neutralAS.Stop();
-                if (correctAS.isPlaying) correctAS.Stop();
-                if (farAS.isPlaying) farAS.Stop();
-
-                if (!closeAS.isPlaying && random == 3) closeAS.Play();
-                print("Play close noise");
-
+                if (random == 3 && !noisePlayed)
+                {
+                    noisePlayed = true; RandomiseClip(closeProtag);
+                }
                 break;
-            case CharacterAnimator.Face.happy:
+            case ProtagonistAnimator.CharacterEmotion.Correct:
                 //turn off other sounds
-                if (neutralAS.isPlaying) neutralAS.Stop();
-                if (closeAS.isPlaying) closeAS.Stop();
-                if (farAS.isPlaying) farAS.Stop();
-
-                if (correctAS.isPlaying && random == 3) correctAS.Play();
+                if (random == 3 && !noisePlayed)
+                {
+                    noisePlayed = true; RandomiseClip(correctProtag);
+                }
                 print("Play correct noise");
 
                 break;
@@ -94,12 +115,22 @@ public class AudioController : Singleton<AudioController>
         CheckIfFaceStateChanged();
     }
 
+    void RandomiseClip(AudioSource[] _audioSourceArray)
+    {
+        _audioSourceArray[RandomIntBetweenTwoInt(0, _audioSourceArray.Length)].Play();
+        print("playing " + _audioSourceArray[RandomIntBetweenTwoInt(0, _audioSourceArray.Length)].ToString());
+    }
+
     void CheckIfFaceStateChanged()
     {
-        if((_CA.face).ToString() != prevFaceState)
+        if((_PA.characterEmotion).ToString() != prevFaceState)
         {
-            prevFaceState = _CA.face.ToString();
+            //print("Prev: " + prevFaceState);
+            //print("Current: " + _PA.characterEmotion.ToString());
+
+            prevFaceState = _PA.characterEmotion.ToString();
             randomised = false;
+            noisePlayed = false;
         }
 
     }

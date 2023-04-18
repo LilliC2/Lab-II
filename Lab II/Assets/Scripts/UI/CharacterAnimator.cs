@@ -33,14 +33,14 @@ public class CharacterAnimator : Singleton<CharacterAnimator>
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-            PlayAnimation("Reset");
-        if (Input.GetKeyDown(KeyCode.J))
-            PlayAnimation("Sad");
-        if (Input.GetKeyDown(KeyCode.K))
-            PlayAnimation("Happy");
-        if (Input.GetKeyDown(KeyCode.L))
-            PlayAnimation("Happy");
+        //if (Input.GetKeyDown(KeyCode.H))
+        //    PlayAnimation("Reset");
+        //if (Input.GetKeyDown(KeyCode.J))
+        //    PlayAnimation("Sad");
+        //if (Input.GetKeyDown(KeyCode.K))
+        //    PlayAnimation("Happy");
+        //if (Input.GetKeyDown(KeyCode.L))
+        //    PlayAnimation("Happy");
         
         ChangeFace();
 
