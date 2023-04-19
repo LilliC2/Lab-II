@@ -59,6 +59,8 @@ public class Level1Controller : Singleton<Level1Controller>
     public Animator layer2Animatior;
     public Animator layer3Animatior;
 
+    bool victorySound;
+
     public enum LayerStatus { Layer1, Layer2, Layer3 }; 
     public LayerStatus layerStatus;
 
@@ -145,7 +147,14 @@ public class Level1Controller : Singleton<Level1Controller>
                 //flatten puzzle
                 ExecuteAfterSeconds(5, () => FlattenPieces());
                 ExecuteAfterSeconds(3, () => _UI.ActivateWinPanel());
-                _AC.Victory.Play();
+
+                //play victory noise once
+                if(victorySound)
+                {
+                    _AC.Victory.Play();
+                    victorySound = false;
+                }
+                
 
                 _GM.gameState = GameManager.GameState.Victory;
 
