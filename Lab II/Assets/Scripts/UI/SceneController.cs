@@ -25,8 +25,8 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
-    public void Assembly()
+    public void Level2()
     {
-        SceneManager.LoadScene("Assembly");
+        SceneManager.LoadScene("Level2");
     }
 }

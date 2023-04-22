@@ -32,6 +32,6 @@ public class MainSelector : MonoBehaviour
     IEnumerator ChangeLevel()
     {
         yield return new WaitForSeconds(2.3f);
-        _sC.GetComponent<SceneController>().Assembly();
+        _sC.GetComponent<SceneController>().Level1();
     }
 }
