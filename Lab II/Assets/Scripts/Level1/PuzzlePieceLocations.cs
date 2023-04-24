@@ -64,23 +64,40 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     // Update is called once per frame
     void Update()
     {
-        
-        switch(_L1C.layerStatus)
+        if(_GM.levelState == GameManager.LevelState.Level1)
         {
-            case Level1Controller.LayerStatus.Layer1:
-                DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
-                
-                break;
-            case Level1Controller.LayerStatus.Layer2:
-                DragAndDropPuzzlePieces(puzzlePiecesL2, puzzlePiecesEndPosL2);
-                break;
-            case Level1Controller.LayerStatus.Layer3:
-                DragAndDropPuzzlePieces(puzzlePiecesL3, puzzlePiecesEndPosL3);
-                happyRadius = 5;
-                smileRadius = 12;
-                neutralRadius = 18;
-                break;
+            switch (_L1C.layerStatus)
+            {
+                case Level1Controller.LayerStatus.Layer1:
+                    DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
 
+                    break;
+                case Level1Controller.LayerStatus.Layer2:
+                    DragAndDropPuzzlePieces(puzzlePiecesL2, puzzlePiecesEndPosL2);
+                    break;
+                case Level1Controller.LayerStatus.Layer3:
+                    DragAndDropPuzzlePieces(puzzlePiecesL3, puzzlePiecesEndPosL3);
+                    happyRadius = 5;
+                    smileRadius = 12;
+                    neutralRadius = 18;
+                    break;
+
+            }
+        }
+        else if(_GM.levelState == GameManager.LevelState.Level2)
+        {
+            switch (_L2C.layerStatus)
+            {
+                case Level2Controllers.LayerStatus.Layer1:
+                    DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
+
+                    break;
+                case Level2Controllers.LayerStatus.Layer2:
+                    DragAndDropPuzzlePieces(puzzlePiecesL2, puzzlePiecesEndPosL2);
+                    break;
+                
+
+            }
         }
     }
 
@@ -192,6 +209,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             //rotate to the right
             if (Input.GetKeyDown(KeyCode.R))
             {
+                print("Rotate R");
                 //if not 360
                 if(!rotating)
                 {
@@ -208,6 +226,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             //rotate to the left
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                print("Rotate Q");
+
                 //if not 360
                 if (!rotating)
                 {

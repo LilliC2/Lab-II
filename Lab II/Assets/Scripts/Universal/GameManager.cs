@@ -10,6 +10,9 @@ public class GameManager : Singleton<GameManager>
         Instructions, Playing, Pause, Title, Victory
     }
     public GameState gameState;
+    public enum LevelState { Level1, Level2 }
+    public LevelState levelState;
+
     public bool isPlaying;
     public bool isPaused;
 
@@ -27,7 +30,16 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        //change lvl state
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            levelState = LevelState.Level1;
+        }
 
+        if (SceneManager.GetActiveScene().name == "Level2")
+        {
+            levelState = LevelState.Level2;
+        }
 
         if (gameState == GameState.Playing)
         {

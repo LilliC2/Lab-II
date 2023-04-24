@@ -80,7 +80,7 @@ public class Level1Controller : Singleton<Level1Controller>
     // Update is called once per frame
     void Update()
     {
-        if(_GM.gameState == GameManager.GameState.Playing)
+        if(_GM.gameState == GameManager.GameState.Playing && _GM.levelState == GameManager.LevelState.Level1)
         {
             //show complete puzzle
             if(!moveOver)
