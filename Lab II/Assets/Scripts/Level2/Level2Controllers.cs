@@ -147,8 +147,8 @@ public class Level2Controllers : Singleton<Level2Controllers>
 
     void ScatterPieces()
     {
-        layer1Animatior.SetTrigger("scatter");
-        layer2Animatior.SetTrigger("scatter");
+        layer1Animatior.SetTrigger("scatter l2");
+        layer2Animatior.SetTrigger("scatter l2");
 
 
     }

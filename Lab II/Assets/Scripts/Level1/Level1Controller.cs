@@ -30,7 +30,11 @@ public class Level1Controller : Singleton<Level1Controller>
     [Header("Camera")]
     public GameObject cameraPosInPuzzle;
     public GameObject cameraPosCanvas;
+    public GameObject cameraPosLvl3;
     public GameObject mainCamera;
+    Camera camera;
+    float camDefaultZoom = 25;
+    float camLvl3Zoom = 15;
     
     bool scatter = false;
     bool scatterRnd = false;
@@ -69,6 +73,7 @@ public class Level1Controller : Singleton<Level1Controller>
     {
         moveOver = false;
         layerStatus = LayerStatus.Layer1;
+        camera = FindObjectOfType<Camera>();
         
     }
 
@@ -136,11 +141,20 @@ public class Level1Controller : Singleton<Level1Controller>
                 //bring in layer 3 tray
                 ExecuteAfterSeconds(2, () => BringTray(3));
                 layerStatus = LayerStatus.Layer3;
+
+
+                //zoom in camera
+                camera.DOOrthoSize(camLvl3Zoom, 2);
+                //move cam over
+                ExecuteAfterSeconds(2, () => MoveCamera(cameraPosLvl3));
+
+
             }
 
             //check if layer 3 is complete
             if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL3) && layerStatus == LayerStatus.Layer3)
             {
+                camera.DOOrthoSize(camDefaultZoom, 2);
                 print("donje");
                 //move camera to focus on canvas and remove tray
                 ExecuteAfterSeconds(1, () => MoveCamera(cameraPosCanvas));

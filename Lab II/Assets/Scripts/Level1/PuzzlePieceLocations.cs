@@ -41,7 +41,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     bool inRangeOfGoal;
 
     Vector3 pieceScale = new Vector3(1, 1, 1);
-    Vector3 pieceScaleL3 = new Vector3(1.5f, 1, 1.5f);
 
     bool rotating = false;
 
@@ -186,6 +185,10 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     # endregion
                 }
             }
+
+            //while object held, outline
+            lastObjectHeld.GetComponent<Outline>().enabled = true;
+
             //rotate to the right
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -221,6 +224,10 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
         }
 
+
+        //turn off outline
+        if(dragScript.selectedObject == null) lastObjectHeld.GetComponent<Outline>().enabled = false;
+
         //object in range of pallette
         if (dragScript.selectedObject == null && (lastObjectHeld.transform.position.x > 13 || lastObjectHeld.transform.position.x < -22))
         {
@@ -228,6 +235,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             if ((_L1C.layerStatus != Level1Controller.LayerStatus.Layer3))
             {
                 lastObjectHeld.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                
                 // Vector3 lOHscale =lastObjectHeld.gameObject.transform.localScale;
                 //lastObjectHeld.gameObject.transform.localScale = new Vector3(lOHscale.x-2, lOHscale.y-2f, lOHscale.z-2);
             }
@@ -269,6 +277,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
                     lastObjectHeld.transform.rotation = _puzzlePiecesEndPos[index].transform.rotation;
                     lastObjectHeld.transform.localScale = pieceScale;
+
+
 
                     lastObjectHeld.tag = "complete";
 
@@ -352,9 +362,9 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
 
 
-                puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(3, 3, 3);
+                puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(1, 1, 1);
 
-                puzzlePiecesL3[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f), 8, UnityEngine.Random.Range(10f, -3.4f)));
+                puzzlePiecesL3[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(82.8f, 68.36f), 8, UnityEngine.Random.Range(10f, -1)));
 
                 int num = rotations[UnityEngine.Random.Range(0, 3)];
                 puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
