@@ -47,11 +47,14 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     bool rectangele;
     bool hasReset = false;
 
+    bool nameSame;
+
     [Header("Reaction Radius")]
     public float happyRadius;
     public float smileRadius;
     public float neutralRadius;
     GameObject endPos;
+
 
 
     // Start is called before the first frame update
@@ -86,10 +89,16 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         }
         else if(_GM.levelState == GameManager.LevelState.Level2)
         {
+            print("ppl1 " + puzzlePiecesL1.Length);
+            print("ppl1end " + puzzlePiecesEndPosL1.Length);
+
+            DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
+
             switch (_L2C.layerStatus)
             {
+
                 case Level2Controllers.LayerStatus.Layer1:
-                    DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
+                    
 
                     break;
                 case Level2Controllers.LayerStatus.Layer2:
@@ -110,26 +119,45 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     void DragAndDropPuzzlePieces(GameObject[] _puzzlePieces, GameObject[] _puzzlePiecesEndPos)
 
     {
+        print("made it");
         //check if object is close to puzzle location
         //set location to puzzle location
 
         //check if player is dragging an object
         if (dragScript.selectedObject != null)
         {
+
             hasReset = false;
             lastObjectHeld = dragScript.selectedObject;
 
 
-            //find object in array
             for (int j = 0; j < _puzzlePieces.Length; j++)
             {
                 if (_puzzlePieces[j].name == dragScript.selectedObject.name)
                 {
-                    snapped = false;
+                    print("Name same is true");
+                    nameSame = true;
                     index = j;
+                }
+                
+                    
+            }
 
-#region aniamtion
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius)
+
+
+
+            //find object in array
+            for (int i = 0; i < _puzzlePieces.Length; i++)
+            {
+                if (nameSame)
+                {
+                    snapped = false;
+                    index = i;
+                    endPos = _puzzlePiecesEndPos[i];
+                    print("PROBLEM FIXED");
+
+                    #region aniamtion
+                    if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius)
                     {
                         inRangeOfGoal = true;
 
@@ -138,19 +166,19 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     }
                     else inRangeOfGoal = false;
 
-                    endPos = _puzzlePiecesEndPos[j];
+                    
 
                     
                     
-                    if (_puzzlePieces[j].transform.eulerAngles.y == 270 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius)
+                    if (_puzzlePieces[i].transform.eulerAngles.y == 270 && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius)
                     {
                         //Right rotation 270
                         _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Right;
                     }
-                    else if (_puzzlePieces[j].transform.eulerAngles.y == 180 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius)
+                    else if (_puzzlePieces[i].transform.eulerAngles.y == 180 && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius)
                     {
 
-                        if(_puzzlePieces[j].name == "RedRectangle")
+                        if(_puzzlePieces[i].name == "RedRectangle")
                         {
                             rectangele = true;
                             _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Correct;
@@ -161,21 +189,21 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                         }
                         
                     }
-                    else if (_puzzlePieces[j].transform.eulerAngles.y == 90 && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius)
+                    else if (_puzzlePieces[i].transform.eulerAngles.y == 90 && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius)
                     {
                         //Left rotation 180
                         _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Left;
 
                     }
                     //HAPPY EMOTE
-                    else if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < happyRadius && (_puzzlePieces[j].transform.eulerAngles.y <= 1) && _puzzlePieces[j].transform.eulerAngles.y > -1)
+                    else if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius && (_puzzlePieces[i].transform.eulerAngles.y <= 1) && _puzzlePieces[i].transform.eulerAngles.y > -1)
                     {
                         //_CA.face = CharacterAnimator.Face.happy;
                         _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Correct;
 
                     }
                     //SMILE EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > happyRadius && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < smileRadius)
+                    if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) > happyRadius && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < smileRadius)
                     {
                         // print("Smile");
                         //_CA.face = CharacterAnimator.Face.smile;
@@ -184,7 +212,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     }
 
                     //NEUTRAL EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > smileRadius && Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) < neutralRadius)
+                    if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) > smileRadius && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < neutralRadius)
                     {
                         // print("Neutral");
                         //_CA.face = CharacterAnimator.Face.reset;
@@ -192,7 +220,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
                     }
                     //SAD EMOTE
-                    if (Vector3.Distance(_puzzlePieces[j].transform.position, _puzzlePiecesEndPos[j].transform.position) > neutralRadius)
+                    if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) > neutralRadius)
                     {
                         //    print("Sad");
                         //_CA.face = CharacterAnimator.Face.sad;
@@ -203,8 +231,9 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                 }
             }
 
+            print("after name compare");
             //while object held, outline
-            lastObjectHeld.GetComponent<Outline>().enabled = true;
+            //lastObjectHeld.GetComponent<Outline>().enabled = true;
 
             //rotate to the right
             if (Input.GetKeyDown(KeyCode.R))
@@ -300,7 +329,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
 
-                    lastObjectHeld.tag = "complete";
+                    lastObjectHeld.tag = "complete";    
 
                     _SA.Snap(_puzzlePiecesEndPos[index]);
 
