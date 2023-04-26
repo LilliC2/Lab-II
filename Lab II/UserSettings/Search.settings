@@ -7,9 +7,9 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.8788AF05" = "puzzle"
+	"last_search.8788AF05" = "button"
 	"OpenInspectorPreview.8788AF05" = "0"
-	"currentGroup.8788AF05" = "scene"
+	"currentGroup.8788AF05" = "menu"
 }
 providers = {
 	adb = {
@@ -54,6 +54,7 @@ providers = {
 	}
 }
 recentSearches = [
+	"b"
 	"puzzle"
 ]
 searchItemFavorites = [

@@ -42,6 +42,8 @@ public class AudioController : Singleton<AudioController>
     [Header("Sound Effects")]
     public AudioSource snapChime;
     public AudioSource Victory;
+    public AudioSource buttonClick;
+    public AudioSource pieceMisclick;
 
 
     public int noiseCooldownTime;
@@ -130,6 +132,10 @@ public class AudioController : Singleton<AudioController>
         _audioSourceArray[RandomIntBetweenTwoInt(0, _audioSourceArray.Length)].Play();
     }
 
+    public void ButtonClick()
+    {
+        buttonClick.Play();
+    }
     void CheckIfFaceStateChanged()
     {
         if((_PA.characterEmotion).ToString() != prevFaceState)

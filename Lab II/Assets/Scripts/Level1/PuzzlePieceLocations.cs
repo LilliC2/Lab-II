@@ -48,6 +48,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     bool hasReset = false;
 
     bool nameSame;
+    bool misclickSoundPlayed;
 
     [Header("Reaction Radius")]
     public float happyRadius;
@@ -125,7 +126,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //check if player is dragging an object
         if (dragScript.selectedObject != null)
         {
-
+            misclickSoundPlayed = false;
             hasReset = false;
             lastObjectHeld = dragScript.selectedObject;
 
@@ -307,7 +308,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             }
 
             //Check if rotation is the same
-            if ((lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.z < 0.5) || rectangele) 
+            if ((lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.z < 0.5) || rectangele)
             {
                 if (!snapped)
                 {
@@ -317,7 +318,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
 
-                    lastObjectHeld.tag = "complete";    
+                    lastObjectHeld.tag = "complete";
 
                     _SA.Snap(_puzzlePiecesEndPos[index]);
 
@@ -325,10 +326,22 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     snapped = true;
                 }
             }
+
+
+
+            if (lastObjectHeld.name == "RedRectangle")
+
+                return;
+        }
+        //misclick nosie
+        else if (dragScript.selectedObject == null && inRangeOfGoal == false)
+        {
+            if(!misclickSoundPlayed)
+            {
+                _AC.pieceMisclick.Play();
+                misclickSoundPlayed = true;
+            }
             
-            if(lastObjectHeld.name =="RedRectangle")
-            
-            return;
         }
     }
 
