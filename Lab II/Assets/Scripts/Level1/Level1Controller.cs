@@ -18,6 +18,7 @@ public class Level1Controller : Singleton<Level1Controller>
     public GameObject layer1Tray;
     public GameObject layer2Tray;
     public GameObject layer3Tray;
+    public GameObject layer3Palette;
 
     public GameObject layer1Protection;
     public GameObject layer2Protection;
@@ -82,9 +83,12 @@ public class Level1Controller : Singleton<Level1Controller>
     {
         if(_GM.gameState == GameManager.GameState.Playing && _GM.levelState == GameManager.LevelState.Level1)
         {
+
+            
             //show complete puzzle
             if(!moveOver)
             {
+
                 ExecuteAfterSeconds(6, () => MovePieces());
                 moveOver = true;
             }
@@ -115,7 +119,7 @@ public class Level1Controller : Singleton<Level1Controller>
             ExecuteAfterSeconds(10, () => _GM.GameStatePlaying());
             //bring in layer 1 tray
             ExecuteAfterSeconds(10, () => BringTray(1));
-
+            
             //check if layer 1 is complete
             if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL1) && layerStatus == LayerStatus.Layer1)
             {
@@ -156,6 +160,7 @@ public class Level1Controller : Singleton<Level1Controller>
             {
                 camera.DOOrthoSize(camDefaultZoom, 2);
                 print("donje");
+                layer3Tray.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(layerEase);
                 //move camera to focus on canvas and remove tray
                 ExecuteAfterSeconds(1, () => MoveCamera(cameraPosCanvas));
                 //flatten puzzle
@@ -221,8 +226,8 @@ public class Level1Controller : Singleton<Level1Controller>
 
     void BringTray(int _layer)
     {
-
-        switch(_layer)
+        _GM.introOver = true;
+        switch (_layer)
         {
             case 1:
                 //turn on hint button
@@ -238,6 +243,8 @@ public class Level1Controller : Singleton<Level1Controller>
         }
     }
     
+
+
     void MoveCamera(GameObject _pos)
     {
 

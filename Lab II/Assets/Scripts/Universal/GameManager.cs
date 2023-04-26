@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
     public bool isPlaying;
     public bool isPaused;
 
+    public bool introOver = false;
     // Start is called before the first frame update
     void Start()
     {

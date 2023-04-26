@@ -121,7 +121,7 @@ public class Level2Controllers : Singleton<Level2Controllers>
             //check if layer 2 is compelte
             if (_PPL.CheckLayerStatus(_PPL.puzzlePiecesL2) && layerStatus == LayerStatus.Layer2)
             {
-
+                layer2Tray.transform.DOMove(DeactiveTrayPos.transform.position, layerSpeed).SetEase(layerEase);
                 print("donje");
                 //move camera to focus on canvas and remove tray
                 ExecuteAfterSeconds(1, () => MoveCamera(cameraPosCanvas));
@@ -173,7 +173,7 @@ public class Level2Controllers : Singleton<Level2Controllers>
 
     void BringTray(int _layer)
     {
-
+        _GM.introOver = true;
         switch (_layer)
         {
             case 1:

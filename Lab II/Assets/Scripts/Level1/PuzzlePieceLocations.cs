@@ -67,7 +67,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     // Update is called once per frame
     void Update()
     {
-        if(_GM.levelState == GameManager.LevelState.Level1)
+        if(_GM.levelState == GameManager.LevelState.Level1 && _GM.gameState == GameManager.GameState.Playing && _GM.introOver)
         {
             switch (_L1C.layerStatus)
             {
@@ -87,18 +87,18 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
             }
         }
-        else if(_GM.levelState == GameManager.LevelState.Level2)
+        else if(_GM.levelState == GameManager.LevelState.Level2 && _GM.gameState == GameManager.GameState.Playing && _GM.introOver)
         {
             print("ppl1 " + puzzlePiecesL1.Length);
             print("ppl1end " + puzzlePiecesEndPosL1.Length);
 
-            DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
+            
 
             switch (_L2C.layerStatus)
             {
 
                 case Level2Controllers.LayerStatus.Layer1:
-                    
+                    DragAndDropPuzzlePieces(puzzlePiecesL1, puzzlePiecesEndPosL1);
 
                     break;
                 case Level2Controllers.LayerStatus.Layer2:
@@ -119,7 +119,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     void DragAndDropPuzzlePieces(GameObject[] _puzzlePieces, GameObject[] _puzzlePiecesEndPos)
 
     {
-        print("made it");
         //check if object is close to puzzle location
         //set location to puzzle location
 
@@ -135,7 +134,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
                 if (_puzzlePieces[j].name == dragScript.selectedObject.name)
                 {
-                    print("Name same is true");
                     nameSame = true;
                     index = j;
                 }
@@ -147,8 +145,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
                 snapped = false;
                 //index = i;
-                endPos = _puzzlePiecesEndPos[this.index];
-                print("PROBLEM FIXED");
+                endPos = _puzzlePiecesEndPos[index];
 
                 #region aniamtion
                 if (Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) < happyRadius)
@@ -390,7 +387,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
 
-                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f),5, UnityEngine.Random.Range(10f, -3.4f)));
+                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f),7, UnityEngine.Random.Range(10f, -3.4f)));
 
                 int num = rotations[UnityEngine.Random.Range(0, 3)];
                 puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
