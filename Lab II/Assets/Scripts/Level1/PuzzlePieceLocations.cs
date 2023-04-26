@@ -220,14 +220,13 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                 #endregion
             }
 
-            print("after name compare");
             //while object held, outline
-            //lastObjectHeld.GetComponent<Outline>().enabled = true;
+            lastObjectHeld.GetComponent<Outline>().enabled = true;
 
             //rotate to the right
             if (Input.GetKeyDown(KeyCode.R))
             {
-                print("Rotate R");
+                //print("Rotate R");
                 //if not 360
                 if(!rotating)
                 {
@@ -264,7 +263,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
         //turn off outline
-        //if(dragScript.selectedObject == null) lastObjectHeld.GetComponent<Outline>().enabled = false;
+        if(dragScript.selectedObject == null) lastObjectHeld.GetComponent<Outline>().enabled = false;
 
         //object in range of pallette
         if (dragScript.selectedObject == null && (lastObjectHeld.transform.position.x > 13 || lastObjectHeld.transform.position.x < -22))
