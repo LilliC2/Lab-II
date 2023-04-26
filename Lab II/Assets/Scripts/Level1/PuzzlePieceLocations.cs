@@ -130,7 +130,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             hasReset = false;
             lastObjectHeld = dragScript.selectedObject;
 
-
+            //find object in array
             for (int j = 0; j < _puzzlePieces.Length; j++)
             {
                 if (_puzzlePieces[j].name == dragScript.selectedObject.name)
@@ -143,92 +143,84 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     
             }
 
-
-
-
-            //find object in array
-            for (int i = 0; i < _puzzlePieces.Length; i++)
+            if (nameSame)
             {
-                if (nameSame)
+                snapped = false;
+                //index = i;
+                endPos = _puzzlePiecesEndPos[this.index];
+                print("PROBLEM FIXED");
+
+                #region aniamtion
+                if (Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) < happyRadius)
                 {
-                    snapped = false;
-                    index = i;
-                    endPos = _puzzlePiecesEndPos[i];
-                    print("PROBLEM FIXED");
+                    inRangeOfGoal = true;
 
-                    #region aniamtion
-                    if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius)
-                    {
-                        inRangeOfGoal = true;
 
-                        
-                        //lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
-                    }
-                    else inRangeOfGoal = false;
-
-                    
-
-                    
-                    
-                    if (_puzzlePieces[i].transform.eulerAngles.y == 270 && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius)
-                    {
-                        //Right rotation 270
-                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Right;
-                    }
-                    else if (_puzzlePieces[i].transform.eulerAngles.y == 180 && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius)
-                    {
-
-                        if(_puzzlePieces[i].name == "RedRectangle")
-                        {
-                            rectangele = true;
-                            _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Correct;
-                        }
-                        else
-                        { //Multiple rotation
-                            _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Spin;
-                        }
-                        
-                    }
-                    else if (_puzzlePieces[i].transform.eulerAngles.y == 90 && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius)
-                    {
-                        //Left rotation 180
-                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Left;
-
-                    }
-                    //HAPPY EMOTE
-                    else if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < happyRadius && (_puzzlePieces[i].transform.eulerAngles.y <= 1) && _puzzlePieces[i].transform.eulerAngles.y > -1)
-                    {
-                        //_CA.face = CharacterAnimator.Face.happy;
-                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Correct;
-
-                    }
-                    //SMILE EMOTE
-                    if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) > happyRadius && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < smileRadius)
-                    {
-                        // print("Smile");
-                        //_CA.face = CharacterAnimator.Face.smile;
-                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Close;
-
-                    }
-
-                    //NEUTRAL EMOTE
-                    if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) > smileRadius && Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) < neutralRadius)
-                    {
-                        // print("Neutral");
-                        //_CA.face = CharacterAnimator.Face.reset;
-                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Medium;
-
-                    }
-                    //SAD EMOTE
-                    if (Vector3.Distance(_puzzlePieces[i].transform.position, _puzzlePiecesEndPos[i].transform.position) > neutralRadius)
-                    {
-                        //    print("Sad");
-                        //_CA.face = CharacterAnimator.Face.sad;
-                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Far;
-
-                    }
-                    # endregion
+                    //lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
                 }
+                else inRangeOfGoal = false;
+
+
+
+
+                if (_puzzlePieces[index].transform.eulerAngles.y == 270 && Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) < happyRadius)
+                {
+                    //Right rotation 270
+                    _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Right;
+                }
+                else if (_puzzlePieces[index].transform.eulerAngles.y == 180 && Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) < happyRadius)
+                {
+
+                    if (_puzzlePieces[index].name == "RedRectangle")
+                    {
+                        rectangele = true;
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Correct;
+                    }
+                    else
+                    { //Multiple rotation
+                        _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Spin;
+                    }
+
+                }
+                else if (_puzzlePieces[index].transform.eulerAngles.y == 90 && Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) < happyRadius)
+                {
+                    //Left rotation 180
+                    _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Left;
+
+                }
+                //HAPPY EMOTE
+                else if (Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) < happyRadius && (_puzzlePieces[index].transform.eulerAngles.y <= 1) && _puzzlePieces[index].transform.eulerAngles.y > -1)
+                {
+                    //_CA.face = CharacterAnimator.Face.happy;
+                    _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Correct;
+
+                }
+                //SMILE EMOTE
+                if (Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) > happyRadius && Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) < smileRadius)
+                {
+                    // print("Smile");
+                    //_CA.face = CharacterAnimator.Face.smile;
+                    _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Close;
+
+                }
+
+                //NEUTRAL EMOTE
+                if (Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) > smileRadius && Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) < neutralRadius)
+                {
+                    // print("Neutral");
+                    //_CA.face = CharacterAnimator.Face.reset;
+                    _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Medium;
+
+                }
+                //SAD EMOTE
+                if (Vector3.Distance(_puzzlePieces[index].transform.position, _puzzlePiecesEndPos[index].transform.position) > neutralRadius)
+                {
+                    //    print("Sad");
+                    //_CA.face = CharacterAnimator.Face.sad;
+                    _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Far;
+
+                }
+                #endregion
             }
 
             print("after name compare");
@@ -275,7 +267,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
         //turn off outline
-        if(dragScript.selectedObject == null) lastObjectHeld.GetComponent<Outline>().enabled = false;
+        //if(dragScript.selectedObject == null) lastObjectHeld.GetComponent<Outline>().enabled = false;
 
         //object in range of pallette
         if (dragScript.selectedObject == null && (lastObjectHeld.transform.position.x > 13 || lastObjectHeld.transform.position.x < -22))
