@@ -90,8 +90,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         }
         else if(_GM.levelState == GameManager.LevelState.Level2 && _GM.gameState == GameManager.GameState.Playing && _GM.introOver)
         {
-            print("ppl1 " + puzzlePiecesL1.Length);
-            print("ppl1end " + puzzlePiecesEndPosL1.Length);
 
             
 
@@ -124,6 +122,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         //set location to puzzle location
 
         //check if player is dragging an object
+        //check if player is dragging an object
         if (dragScript.selectedObject != null)
         {
             misclickSoundPlayed = false;
@@ -135,6 +134,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
                 if (_puzzlePieces[j].name == dragScript.selectedObject.name)
                 {
+                    print(_puzzlePieces[j].name + dragScript.selectedObject.name);
                     nameSame = true;
                     index = j;
                 }
@@ -144,6 +144,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
             if (nameSame)
             {
+                print("Name is the same");
                 snapped = false;
                 //index = i;
                 endPos = _puzzlePiecesEndPos[index];
@@ -153,7 +154,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                 {
                     inRangeOfGoal = true;
 
-
+                    
                     //lastObjectHeld.transform.position = puzzlePiecesLocations[1, index].transform.position;
                 }
                 else inRangeOfGoal = false;
@@ -244,7 +245,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             //rotate to the left
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                print("Rotate Q");
+                //print("Rotate Q");
 
                 //if not 360
                 if (!rotating)
@@ -399,7 +400,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
 
-                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f),7, UnityEngine.Random.Range(10f, -3.4f)));
+                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f),5, UnityEngine.Random.Range(10f, -3.4f)));
 
                 int num = rotations[UnityEngine.Random.Range(0, 3)];
                 puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);

@@ -68,10 +68,8 @@ public class AudioController : Singleton<AudioController>
         if(!randomised)
         {
             random = RandomIntBetweenTwoInt(1, 4);
-            print(random);
             randomised = true;
         }
-        print(noiseCoolDownBool);
         
 
         switch(_PA.characterEmotion)
@@ -85,7 +83,6 @@ public class AudioController : Singleton<AudioController>
                     StartCoroutine(NoiseCooldown());
                 }
 
-                print("Play idle noise");
 
                 break;
             case ProtagonistAnimator.CharacterEmotion.Far:
@@ -98,7 +95,6 @@ public class AudioController : Singleton<AudioController>
                     StartCoroutine(NoiseCooldown());
                 }
 
-                print("Play far noise");
 
                 break;
             case ProtagonistAnimator.CharacterEmotion.Close:
@@ -109,7 +105,6 @@ public class AudioController : Singleton<AudioController>
                     RandomiseClip(closeProtag);
                     StartCoroutine(NoiseCooldown());
                 }
-                print("Play close noise");
                 break;
             case ProtagonistAnimator.CharacterEmotion.Correct:
                 //turn off other sounds
@@ -119,7 +114,6 @@ public class AudioController : Singleton<AudioController>
                     RandomiseClip(correctProtag);
                     StartCoroutine(NoiseCooldown());
                 }
-                print("Play correct noise");
 
                 break;
 
