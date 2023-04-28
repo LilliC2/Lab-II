@@ -14,6 +14,7 @@ public class GameBehaviour : LC.Behaviour //inherits from
     protected static ProtagonistAnimator _PA { get { return ProtagonistAnimator.INSTANCE; } }
     protected static SnapEffect _SA { get { return SnapEffect.INSTANCE; } }
     protected static AudioController _AC { get { return AudioController.INSTANCE; } }
+    //protected static SceneController _SC { get { return SceneController.INSTANCE; } }
 
 
 }

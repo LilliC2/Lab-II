@@ -25,13 +25,12 @@ public class MainSelector : MonoBehaviour
         {
             Debug.Log(gameObject.name + " is being clicked");
             cam.GetComponent<CameraMovement>().PlayAnimation("Painting" + gameObject.name.ToString());
-            StartCoroutine(ChangeLevel());
         }
     }
 
-    IEnumerator ChangeLevel()
-    {
-        yield return new WaitForSeconds(2.3f);
-        _sC.GetComponent<SceneController>().Level1();
-    }
+    //IEnumerator ChangeLevel()
+    //{
+    //    yield return new WaitForSeconds(2.3f);
+    //    _sC.GetComponent<SceneController>().Level1();
+    //}
 }

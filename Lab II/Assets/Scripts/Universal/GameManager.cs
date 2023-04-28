@@ -25,6 +25,11 @@ public class GameManager : Singleton<GameManager>
         {
             gameState = GameState.Instructions;
         }
+
+        if (SceneManager.GetActiveScene().name == "Title")
+        {
+            gameState = GameState.Playing;
+        }
     }
 
 
