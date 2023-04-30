@@ -226,7 +226,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             lastObjectHeld.GetComponent<Outline>().enabled = true;
 
             //rotate to the right
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 //print("Rotate R");
                 //if not 360
