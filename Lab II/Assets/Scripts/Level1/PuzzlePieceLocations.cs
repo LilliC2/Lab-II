@@ -327,6 +327,10 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     snapped = true;
                 }
             }
+            else
+            {
+                _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Wrong;
+            }
 
 
 
@@ -341,6 +345,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
                 _AC.pieceMisclick.Play();
                 misclickSoundPlayed = true;
+                _PA.characterEmotion = ProtagonistAnimator.CharacterEmotion.Wrong;
             }
             
         }
