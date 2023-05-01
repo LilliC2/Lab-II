@@ -14,6 +14,9 @@ public class AudioSlider : GameBehaviour
     public GameObject playerSource;
     public GameObject effectsSource;
     public AudioSource soundSource;
+    public AudioMixerGroup bgmMix;
+    public AudioMixerGroup playerMix;
+    public AudioMixerGroup effectsMix;
 
 
 
@@ -42,17 +45,17 @@ public class AudioSlider : GameBehaviour
 
             case AudioType.BGM:
                 soundSource = bgmSource.GetComponent<AudioSource>();
-                audioMixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
+                bgmMix.audioMixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
                 break;
 
             case AudioType.Player:
                 soundSource = playerSource.GetComponent<AudioSource>();
-                audioMixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
+                playerMix.audioMixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
                 break;
 
             case AudioType.Effects:
                 soundSource = effectsSource.GetComponent<AudioSource>();
-                audioMixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
+                effectsMix.audioMixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
                 //udioMixer[audio]a
                 break;
 

@@ -583,7 +583,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23662
+  m_Name: pb_Mesh30052
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -758,7 +758,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23708
+  m_Name: pb_Mesh30098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1028,7 +1028,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23774
+  m_Name: pb_Mesh30164
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1192,7 +1192,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23890
+  m_Name: pb_Mesh30280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1356,7 +1356,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh231440
+  m_Name: pb_Mesh30238
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1520,7 +1520,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27778
+  m_Name: pb_Mesh30188
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1684,7 +1684,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24964
+  m_Name: pb_Mesh31388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1848,7 +1848,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23860
+  m_Name: pb_Mesh30254
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3046,7 +3046,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232386
+  m_Name: pb_Mesh31184
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5139,7 +5139,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23818
+  m_Name: pb_Mesh30210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5303,7 +5303,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232330
+  m_Name: pb_Mesh31128
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7417,7 +7417,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh231876
+  m_Name: pb_Mesh30674
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7581,7 +7581,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24690
+  m_Name: pb_Mesh31080
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7745,7 +7745,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24618
+  m_Name: pb_Mesh31008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7909,7 +7909,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232552
+  m_Name: pb_Mesh31354
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9495,7 +9495,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh231786
+  m_Name: pb_Mesh30584
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10164,7 +10164,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23618
+  m_Name: pb_Mesh30008
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12123,7 +12123,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24162
+  m_Name: pb_Mesh30560
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14221,7 +14221,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23934
+  m_Name: pb_Mesh30328
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15769,7 +15769,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh231588
+  m_Name: pb_Mesh30386
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16620,6 +16620,9 @@ MonoBehaviour:
   playerSource: {fileID: 570774669}
   effectsSource: {fileID: 1902857811}
   soundSource: {fileID: 0}
+  bgmMix: {fileID: 4889151197600923635, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+  playerMix: {fileID: 1689802832704400209, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+  effectsMix: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
 --- !u!4 &967998191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4304763869332708, guid: 2547a66872ebe45408ace228820a79e1, type: 3}
@@ -16631,7 +16634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23646
+  m_Name: pb_Mesh30036
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16931,7 +16934,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28820
+  m_Name: pb_Mesh31230
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18628,7 +18631,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232070
+  m_Name: pb_Mesh30868
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19474,7 +19477,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh231352
+  m_Name: pb_Mesh30150
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20690,7 +20693,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24250
+  m_Name: pb_Mesh30650
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21477,7 +21480,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24292
+  m_Name: pb_Mesh30694
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22667,7 +22670,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23968
+  m_Name: pb_Mesh30358
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22977,7 +22980,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23556
+  m_Name: pb_Mesh29946
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26002,7 +26005,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24584
+  m_Name: pb_Mesh30994
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26586,7 +26589,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24126
+  m_Name: pb_Mesh30524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26750,7 +26753,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232046
+  m_Name: pb_Mesh30844
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27638,7 +27641,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28862
+  m_Name: pb_Mesh31272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28638,7 +28641,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh231654
+  m_Name: pb_Mesh30452
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28802,7 +28805,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24886
+  m_Name: pb_Mesh31304
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29072,7 +29075,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25002
+  m_Name: pb_Mesh31426
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30237,7 +30240,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232300
+  m_Name: pb_Mesh31098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31065,7 +31068,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24236
+  m_Name: pb_Mesh30636
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31229,7 +31232,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232120
+  m_Name: pb_Mesh30918
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31498,7 +31501,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232450
+  m_Name: pb_Mesh31248
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31662,7 +31665,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24566
+  m_Name: pb_Mesh30976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32319,7 +32322,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25068
+  m_Name: pb_Mesh31492
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33630,7 +33633,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24524
+  m_Name: pb_Mesh30934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34485,7 +34488,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24030
+  m_Name: pb_Mesh30428
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35209,7 +35212,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh232088
+  m_Name: pb_Mesh30886
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36419,23 +36422,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504238493884479223, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504238493884479223, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504238493884479223, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 25.1723
       objectReference: {fileID: 0}
     - target: {fileID: 504238493884479223, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 108.90315
       objectReference: {fileID: 0}
     - target: {fileID: 504238493884479223, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -12.58615
       objectReference: {fileID: 0}
     - target: {fileID: 504238494212798873, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_Pivot.x
@@ -36525,25 +36528,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: VictoryScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 504238494212798949, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 504238494765088616, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504238494765088616, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504238494765088616, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 25.1723
       objectReference: {fileID: 0}
     - target: {fileID: 504238494765088616, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 108.90315
       objectReference: {fileID: 0}
     - target: {fileID: 504238494765088616, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -41.75845
       objectReference: {fileID: 0}
     - target: {fileID: 504238494765088617, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -36583,23 +36590,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504238494826562148, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504238494826562148, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 504238494826562148, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 25.1723
       objectReference: {fileID: 0}
     - target: {fileID: 504238494826562148, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 108.90315
       objectReference: {fileID: 0}
     - target: {fileID: 504238494826562148, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -70.93075
       objectReference: {fileID: 0}
     - target: {fileID: 504238494826562149, guid: 9c240f2ae2e0c894fb7cd2b9660453f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -36867,9 +36874,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2054283262315744641, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2054283262410460555, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
       propertyPath: m_Name
       value: InstructionPanels
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054283262410460555, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2054283262410460558, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
       propertyPath: ingamePanel
@@ -37043,6 +37058,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2054283262843315598, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054283262856908614, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054283262856908633, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
+      propertyPath: m_text
+      value: Left click to pick up pieces  and click again to drop
+      objectReference: {fileID: 0}
     - target: {fileID: 2054283262966953067, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -37098,6 +37125,10 @@ PrefabInstance:
     - target: {fileID: 2054283263006298405, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054283263031390724, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054283263103175374, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -37211,6 +37242,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2054283263314459665, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2054283263354613430, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -37294,6 +37329,10 @@ PrefabInstance:
     - target: {fileID: 2054283263476467844, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054283263532113950, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b663f9835f706742a40e73cbfbbbe18, type: 3}
@@ -37352,14 +37391,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BG Audio
       objectReference: {fileID: 0}
-    - target: {fileID: 2548983707683712094, guid: a7be6799005053f43937d5db9ac5c264, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 4889151197600923635, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
-    - target: {fileID: 2548983707683712095, guid: a7be6799005053f43937d5db9ac5c264, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 4889151197600923635, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7be6799005053f43937d5db9ac5c264, type: 3}
 --- !u!1001 &2842635011337308777
@@ -37465,6 +37496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hints
       objectReference: {fileID: 0}
+    - target: {fileID: 2842635011283602734, guid: a67203fbe9ff96e4683c02f0b4e66297, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a67203fbe9ff96e4683c02f0b4e66297, type: 3}
 --- !u!1001 &3295152779779160436
@@ -37474,10 +37509,222 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3295152779521645056, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645057, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645058, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645059, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645060, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645061, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645062, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645063, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645064, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645065, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645066, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645067, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645068, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645069, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645070, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645071, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645072, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645073, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645076, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645077, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645078, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645079, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645080, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645081, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645082, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645083, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645085, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645086, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645087, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645088, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645089, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645090, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645091, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
     - target: {fileID: 3295152779521645094, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
       propertyPath: m_Name
       value: PlayerAudio
       objectReference: {fileID: 0}
+    - target: {fileID: 3295152779521645095, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645096, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645097, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645098, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645099, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645100, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645101, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645102, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645103, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645296, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645297, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645298, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645299, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645300, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645301, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645302, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645303, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645308, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645309, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
+    - target: {fileID: 3295152779521645310, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3765294218286616338, guid: 91b534db306f93b4cb245e0bf33461e4, type: 2}
     - target: {fileID: 3295152779521645311, guid: 6f83032d26e62864585cf80c61454f11, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -37941,6 +38188,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 963194229}
+    - target: {fileID: 1294655619039253071, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb8c08e14cf778540ad53988f568f075, type: 3}
     - target: {fileID: 2019266731752680845, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -37951,7 +38202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2019266731752680845, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2019266731752680845, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -37961,6 +38212,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5489911315549496414, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489911315549496414, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fcd73cbcbcb262439830f9c519c1d6f, type: 3}
     - target: {fileID: 6759435222253019730, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -37975,6 +38234,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759435222253019730, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759435222434765980, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
+      propertyPath: m_ChildControlHeight
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6759435222434765981, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
@@ -38035,7 +38298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759435222698008909, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 36.956665
       objectReference: {fileID: 0}
     - target: {fileID: 6759435222698008909, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -38179,7 +38442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759435223481041988, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 36.956665
       objectReference: {fileID: 0}
     - target: {fileID: 6759435223481041988, guid: ec66cffa3c96ae742be3ab6e61105d25, type: 3}
       propertyPath: m_AnchoredPosition.x
