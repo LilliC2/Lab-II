@@ -134,7 +134,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
                 if (_puzzlePieces[j].name == dragScript.selectedObject.name)
                 {
-                    print(_puzzlePieces[j].name + dragScript.selectedObject.name);
                     nameSame = true;
                     index = j;
                 }
@@ -144,7 +143,6 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
             if (nameSame)
             {
-                print("Name is the same");
                 snapped = false;
                 //index = i;
                 endPos = _puzzlePiecesEndPos[index];
@@ -308,9 +306,10 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             {
             }
 
+            print("Roation check = " + (lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.z));
             //Check if rotation is the same
             if ((lastObjectHeld.transform.rotation.y - _puzzlePiecesEndPos[index].transform.rotation.z < 0.5) || rectangele)
-            {
+            {   
                 if (!snapped)
                 {
                     lastObjectHeld.transform.position = _puzzlePiecesEndPos[index].transform.position;
@@ -405,7 +404,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
 
 
-                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f),5, UnityEngine.Random.Range(10f, -3.4f)));
+                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f),5.5f, UnityEngine.Random.Range(10f, -3.4f)));
 
                 int num = rotations[UnityEngine.Random.Range(0, 3)];
                 puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
