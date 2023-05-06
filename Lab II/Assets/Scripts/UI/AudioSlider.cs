@@ -58,6 +58,9 @@ public class AudioSlider : GameBehaviour
                 effectsMix.audioMixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
                 //udioMixer[audio]a
                 break;
+            case AudioType.Master:
+                audioMixer.SetFloat("Volume", Mathf.Log10(Value) * 20);
+                break;
 
         }
 
