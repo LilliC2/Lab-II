@@ -20848,6 +20848,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 57430382885518293, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 59.1935
+      objectReference: {fileID: 0}
+    - target: {fileID: 57430382885518293, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 57430382885518293, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 57430383054650739, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -20955,6 +20967,26 @@ PrefabInstance:
     - target: {fileID: 57430383482076781, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 57430383560116064, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 57430383560116064, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 57430383560116064, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 57430383560116064, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 57430383560116064, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 57430383769565800, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
       propertyPath: m_Pivot.x
@@ -21147,6 +21179,10 @@ PrefabInstance:
     - target: {fileID: 57430384822131716, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Level2Controllers, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 57430384822131719, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 268256464809376102, guid: 49c8b92b147cb354095e088307c861e3, type: 3}
       propertyPath: m_AnchorMax.x
