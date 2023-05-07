@@ -65,6 +65,7 @@ public class Level1Controller : Singleton<Level1Controller>
     public Animator layer3Animatior;
 
     bool victorySound;
+    bool isPiecesActive = false;
 
     public enum LayerStatus { Layer1, Layer2, Layer3 }; 
     public LayerStatus layerStatus;

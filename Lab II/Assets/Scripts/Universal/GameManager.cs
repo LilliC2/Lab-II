@@ -21,7 +21,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         //Instructions game state
-        if (SceneManager.GetActiveScene().name == "Assembly")
+        if (SceneManager.GetActiveScene().name == "Level1")
         {
             gameState = GameState.Instructions;
         }

@@ -19,7 +19,7 @@ public class Drag : GameBehaviour
 
 
         //left click
-        if(Input.GetMouseButtonDown(0) && _GM.gameState == GameManager.GameState.Playing)
+        if(Input.GetMouseButtonDown(0) && _GM.gameState == GameManager.GameState.Playing && _GM.introOver)
         {
             //no object selected
             if(selectedObject == null)
