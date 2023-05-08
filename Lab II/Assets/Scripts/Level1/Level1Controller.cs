@@ -70,9 +70,14 @@ public class Level1Controller : Singleton<Level1Controller>
     public enum LayerStatus { Layer1, Layer2, Layer3 }; 
     public LayerStatus layerStatus;
 
+    
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
+        
         moveOver = false;
         layerStatus = LayerStatus.Layer1;
         camera = FindObjectOfType<Camera>();

@@ -53,12 +53,15 @@ public class Level2Controllers : Singleton<Level2Controllers>
     public Animator layer1Animatior;
     public Animator layer2Animatior;
 
+   
+
     public enum LayerStatus { Layer1, Layer2 };
     public LayerStatus layerStatus;
 
     // Start is called before the first frame update
     void Start()
     {
+
         moveOver = false;
         layerStatus = LayerStatus.Layer1;
 
@@ -162,7 +165,6 @@ public class Level2Controllers : Singleton<Level2Controllers>
     }
     void MovePieces()
     {
-        //currently not working so return to skip this
         //return;
         moveOver = true;
         layer1Pieces.transform.DOMoveZ(100, 1f);
@@ -245,4 +247,6 @@ public class Level2Controllers : Singleton<Level2Controllers>
     {
         hintWarning.SetActive(false);
     }
+
+   
 }

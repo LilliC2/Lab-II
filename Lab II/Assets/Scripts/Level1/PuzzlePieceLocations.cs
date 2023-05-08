@@ -56,11 +56,18 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     public float neutralRadius;
     GameObject endPos;
 
+    [Header("Snap Counter")]
+    int layer1CorrectPiecesCount;
+    int layer2CorrectPiecesCount;
+    int layer3CorrectPiecesCount;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        layer1CorrectPiecesCount = _PPL.puzzlePiecesL1.Length;
+        layer2CorrectPiecesCount = _PPL.puzzlePiecesL2.Length;
+        layer3CorrectPiecesCount = _PPL.puzzlePiecesL3.Length;
 
 
     }
@@ -316,7 +323,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     lastObjectHeld.transform.rotation = _puzzlePiecesEndPos[index].transform.rotation;
                     lastObjectHeld.transform.localScale = pieceScale;
 
-
+                    DecreaseSnapCounter();
 
                     lastObjectHeld.tag = "complete";
 
@@ -375,62 +382,108 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
         bool scatter = true;
 
-        if(!l1compelete)
+        if(_GM.levelState == GameManager.LevelState.Level1)
         {
-            for (int i = 0; i < puzzlePiecesL1.Length; i++)
+            if (!l1compelete)
             {
-
-
-                puzzlePiecesL1[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-
-                puzzlePiecesL1[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f), 5, UnityEngine.Random.Range(10f, -3.4f)));
-
-                int num = rotations[UnityEngine.Random.Range(0, 3)];
-                puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
-                if (i == puzzlePiecesL1.Length-1) l1compelete = true;
-            }
-
-        }
-
-        if (!l2compelete)
-        {
-            for (int i = 0; i < puzzlePiecesL2.Length; i++)
-            {
-                if(puzzlePiecesL2[i].name == "HairTriangle")
+                for (int i = 0; i < puzzlePiecesL1.Length; i++)
                 {
-                    puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
+
+
+                    puzzlePiecesL1[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+                    puzzlePiecesL1[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f), 5, UnityEngine.Random.Range(10f, -3.4f)));
+
+                    int num = rotations[UnityEngine.Random.Range(0, 3)];
+                    puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
+                    if (i == puzzlePiecesL1.Length - 1) l1compelete = true;
                 }
-                else puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
-
-
-                puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f),5.5f, UnityEngine.Random.Range(10f, -3.4f)));
-
-                int num = rotations[UnityEngine.Random.Range(0, 3)];
-                puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
-                if (i == puzzlePiecesL2.Length - 1) l2compelete = true;
             }
 
-        }if (!l3compelete)
-        {
-            for (int i = 0; i < puzzlePiecesL3.Length; i++)
+            if (!l2compelete)
             {
+                for (int i = 0; i < puzzlePiecesL2.Length; i++)
+                {
+                    if (puzzlePiecesL2[i].name == "HairTriangle")
+                    {
+                        puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
+                    }
+                    else puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
 
-                puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(1, 1, 1);
 
-                puzzlePiecesL3[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(82.8f, 68.36f), 8, UnityEngine.Random.Range(10f, -1)));
+                    puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(88.8f, 74.1f), 5.5f, UnityEngine.Random.Range(10f, -3.4f)));
 
-                int num = rotations[UnityEngine.Random.Range(0, 3)];
-                puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
-                if (i == puzzlePiecesL3.Length - 1) l3compelete = true;
+                    int num = rotations[UnityEngine.Random.Range(0, 3)];
+                    puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
+                    if (i == puzzlePiecesL2.Length - 1) l2compelete = true;
+                }
+
+            }
+            if (!l3compelete)
+            {
+                for (int i = 0; i < puzzlePiecesL3.Length; i++)
+                {
+
+
+                    puzzlePiecesL3[i].gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+                    puzzlePiecesL3[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(82.8f, 68.36f), 8, UnityEngine.Random.Range(10f, -1)));
+
+                    int num = rotations[UnityEngine.Random.Range(0, 3)];
+                    puzzlePiecesL3[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
+                    if (i == puzzlePiecesL3.Length - 1) l3compelete = true;
+                }
+
+            }
+        }
+        else if (_GM.levelState == GameManager.LevelState.Level2)
+        {
+
+            if (!l1compelete)
+            {
+                for (int i = 0; i < puzzlePiecesL1.Length; i++)
+                {
+
+
+                    puzzlePiecesL1[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+                    puzzlePiecesL1[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(115, 97), 5, UnityEngine.Random.Range(9, -2)));
+
+                    int num = rotations[UnityEngine.Random.Range(0, 3)];
+                    puzzlePiecesL1[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
+                    if (i == puzzlePiecesL1.Length - 1) l1compelete = true;
+                }
+
             }
 
+            if (!l2compelete)
+            {
+                for (int i = 0; i < puzzlePiecesL2.Length; i++)
+                {
+                    if (puzzlePiecesL2[i].name == "HairTriangle")
+                    {
+                        puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
+                    }
+                    else puzzlePiecesL2[i].gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+
+
+                    puzzlePiecesL2[i].gameObject.transform.position = (new Vector3(UnityEngine.Random.Range(115f, 97), 5.5f, UnityEngine.Random.Range(9, -2)));
+
+                    int num = rotations[UnityEngine.Random.Range(0, 3)];
+                    puzzlePiecesL2[i].gameObject.transform.eulerAngles = new Vector3(0, Mathf.Round(num), 0);
+                    if (i == puzzlePiecesL2.Length - 1) l2compelete = true;
+                }
+
+            }
         }
 
 
 
-        return scatter;
+
+            return scatter;
      }
 
 
@@ -467,4 +520,20 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
     }
 
+    void DecreaseSnapCounter()
+    {
+        switch(_L1C.layerStatus)
+        {
+            case Level1Controller.LayerStatus.Layer1:
+                layer1CorrectPiecesCount--;
+                break;
+            case Level1Controller.LayerStatus.Layer2:
+                layer2CorrectPiecesCount--;
+                break;
+            case Level1Controller.LayerStatus.Layer3:
+                layer3CorrectPiecesCount--;
+                break;
+
+        }
+    }
 }
