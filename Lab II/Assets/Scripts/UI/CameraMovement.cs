@@ -40,4 +40,9 @@ public class CameraMovement : GameBehaviour
     {
         _sC.GetComponent<SceneController>().Level2();
     }
+
+    public void Exit()
+    {
+        _sC.GetComponent<SceneController>().QuitGame();
+    }
 }

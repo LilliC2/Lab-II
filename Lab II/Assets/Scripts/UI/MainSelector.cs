@@ -24,7 +24,7 @@ public class MainSelector : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log(gameObject.name + " is being clicked");
-            cam.GetComponent<CameraMovement>().PlayAnimation("Painting" + gameObject.name.ToString());
+            cam.GetComponent<CameraMovement>().PlayAnimation(gameObject.name.ToString());
         }
     }
 

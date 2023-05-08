@@ -57,9 +57,11 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     GameObject endPos;
 
     [Header("Snap Counter")]
-    int layer1CorrectPiecesCount;
-    int layer2CorrectPiecesCount;
-    int layer3CorrectPiecesCount;
+    public int layer1CorrectPiecesCount;
+    public int layer2CorrectPiecesCount;
+    public int layer3CorrectPiecesCount;
+    public int layer4CorrectPiecesCount;
+    public int layer5CorrectPiecesCount;
 
 
     // Start is called before the first frame update
@@ -68,6 +70,8 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
         layer1CorrectPiecesCount = _PPL.puzzlePiecesL1.Length;
         layer2CorrectPiecesCount = _PPL.puzzlePiecesL2.Length;
         layer3CorrectPiecesCount = _PPL.puzzlePiecesL3.Length;
+        layer4CorrectPiecesCount = _PPL.puzzlePiecesL1.Length;
+        layer5CorrectPiecesCount = _PPL.puzzlePiecesL2.Length;
 
 
     }
@@ -77,6 +81,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
     {
         if(_GM.levelState == GameManager.LevelState.Level1 && _GM.gameState == GameManager.GameState.Playing && _GM.introOver)
         {
+            
             switch (_L1C.layerStatus)
             {
                 case Level1Controller.LayerStatus.Layer1:
@@ -323,7 +328,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
                     lastObjectHeld.transform.rotation = _puzzlePiecesEndPos[index].transform.rotation;
                     lastObjectHeld.transform.localScale = pieceScale;
 
-                    DecreaseSnapCounter();
+                    DecreaseSnapCounterLevel1();
 
                     lastObjectHeld.tag = "complete";
 
@@ -520,7 +525,7 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
 
     }
 
-    void DecreaseSnapCounter()
+    public void DecreaseSnapCounterLevel1()
     {
         switch(_L1C.layerStatus)
         {
@@ -533,7 +538,15 @@ public class PuzzlePieceLocations : Singleton<PuzzlePieceLocations>
             case Level1Controller.LayerStatus.Layer3:
                 layer3CorrectPiecesCount--;
                 break;
-
+        }
+        switch (_L2C.layerStatus)
+        {
+            case Level2Controllers.LayerStatus.Layer1:
+                layer4CorrectPiecesCount--;
+                break;
+            case Level2Controllers.LayerStatus.Layer2:
+                layer5CorrectPiecesCount--;
+                break;
         }
     }
 }

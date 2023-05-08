@@ -94,7 +94,33 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
-                textBox.text = "...";
+                textBox.text = "There are still some missplaced pieces";
+                //switch(_L1C.layerStatus)
+                //{
+                //    case Level1Controller.LayerStatus.Layer1:
+                //        textBox.text = "We need to place " + _PPL.layer1CorrectPiecesCount + " pieces left";
+                //        Debug.Log("layer1");
+                //        break;
+                //    case Level1Controller.LayerStatus.Layer2:
+                //        textBox.text = "We need to place " + _PPL.layer2CorrectPiecesCount + " pieces left";
+                //        Debug.Log("layer2");
+                //        break;
+                //    case Level1Controller.LayerStatus.Layer3:
+                //        textBox.text = "We need to place " + _PPL.layer3CorrectPiecesCount + " pieces left";
+                //        Debug.Log("layer3");
+                //        break;
+                //}
+                //switch (_L2C.layerStatus)
+                //{
+                //    case Level2Controllers.LayerStatus.Layer1:
+                //        textBox.text = "We need to place " + _PPL.layer4CorrectPiecesCount + " pieces left";
+                //        Debug.Log("layer4");
+                //        break;
+                //    case Level2Controllers.LayerStatus.Layer2:
+                //        textBox.text = "We need to place " + _PPL.layer5CorrectPiecesCount + " pieces left";
+                //        Debug.Log("layer3");
+                //        break;
+                //}
                 break;
 
             case CharacterEmotion.Far:
