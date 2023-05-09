@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c47b05cae38c8a3468844284b84a60cb, type: 2}
   m_LightingSettings: {fileID: 1039389267}
 --- !u!196 &4
 NavMeshSettings:
@@ -7053,6 +7053,11 @@ MonoBehaviour:
   happyRadius: 5
   smileRadius: 12
   neutralRadius: 18
+  layer1CorrectPiecesCount: 0
+  layer2CorrectPiecesCount: 0
+  layer3CorrectPiecesCount: 0
+  layer4CorrectPiecesCount: 0
+  layer5CorrectPiecesCount: 0
 --- !u!114 &526480634
 MonoBehaviour:
   m_ObjectHideFlags: 0

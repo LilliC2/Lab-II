@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,14 @@ public class CameraMovement : GameBehaviour
 
     public GameObject _sC;
 
+    public CanvasGroup cvs;
+
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        cvs.alpha = 0;
     }
 
     public void PlayAnimation(string _string)
@@ -44,5 +49,15 @@ public class CameraMovement : GameBehaviour
     public void Exit()
     {
         _sC.GetComponent<SceneController>().QuitGame();
+    }
+
+    public void FadeOut()
+    {
+        FadeCanvas(1);
+    }
+
+    void FadeCanvas(float _fadeTo)
+    {
+        cvs.DOFade(_fadeTo, 2);
     }
 }
