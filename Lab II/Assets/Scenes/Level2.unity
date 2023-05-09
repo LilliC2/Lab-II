@@ -1235,6 +1235,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2753516066621422925, guid: 66a81251ae65c854686b804523b2672c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2753516066940840738, guid: 66a81251ae65c854686b804523b2672c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1328,6 +1332,10 @@ PrefabInstance:
       value: InstructionPanels
       objectReference: {fileID: 0}
     - target: {fileID: 2753516067802585788, guid: 66a81251ae65c854686b804523b2672c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753516068051601075, guid: 66a81251ae65c854686b804523b2672c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

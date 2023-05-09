@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
 {
     Animator anim;
-    public enum CharacterEmotion { Enter, Idle, Far, Medium, Close, Correct, Wrong, Right, Left, Spin, Reset }
+    public enum CharacterEmotion { Enter, Idle, Far, Medium, Close, Correct, Wrong, Right, Left, Spin, Reset, Victory }
 
     public CharacterEmotion characterEmotion;
     public Canvas canvas;
+    public bool hasWon;
 
     public Image characterFace;
 
@@ -20,6 +21,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
     {
         anim = GetComponent<Animator>();
         characterEmotion = CharacterEmotion.Enter;
+        hasWon = false;
     }
 
     public void Update()
@@ -55,6 +57,12 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
             characterEmotion = CharacterEmotion.Reset;
 
         ProtagonistAnim();
+
+        if(_GM.gameState == GameManager.GameState.Victory && !hasWon)
+        {
+            _PA.characterEmotion = CharacterEmotion.Correct;
+            hasWon = true;
+        }
 
         //ChangeFace();
 
@@ -94,7 +102,7 @@ public class ProtagonistAnimator : Singleton<ProtagonistAnimator>
                 anim.ResetTrigger("Left");
                 anim.ResetTrigger("Spin");
                 anim.ResetTrigger("Reset");
-                textBox.text = "There are still some missplaced pieces";
+                textBox.text = "A few more pieces";
                 //switch(_L1C.layerStatus)
                 //{
                 //    case Level1Controller.LayerStatus.Layer1:
